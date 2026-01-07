@@ -1,0 +1,218 @@
+================================================================================
+AGILE NIDS - COMPREHENSIVE TESTING REPORT
+================================================================================
+
+Test Date: 2026-01-08 01:51:04
+Experiment: experiments\enhanced_agile_nids_success_20260107_160856
+Decision Threshold: 0.100000
+Datasets Tested: 8
+
+================================================================================
+OVERALL SUMMARY
+================================================================================
+
+Attack Datasets (4):
+  Average Detection Rate (Recall): 0.6272
+  Average F1 Score: 0.3330
+  Average FPR: 0.0573
+
+Benign Datasets (4):
+  Average Precision: 0.1914
+  Average FPR: 0.0972
+
+================================================================================
+DETAILED RESULTS BY DATASET
+================================================================================
+
+
+DDoS
+--------------------------------------------------------------------------------
+Description: Distributed Denial of Service attacks
+Type: ATTACK
+Samples: 49987 (Benign: 26122, Attack: 23865)
+
+Performance Metrics:
+  Accuracy:  0.8493 (84.93%)
+  Precision: 0.9358 (93.58%)
+  Recall:    0.7348 (73.48%)
+  F1-Score:  0.8232 (82.32%)
+  ROC AUC:   0.7074
+  FPR:       0.0461 (4.61%)
+
+Confusion Matrix:
+  True Negatives:     24918
+  False Positives:     1204
+  False Negatives:     6328
+  True Positives:     17537
+
+Inference Time: 6.08s
+Time per sample: 0.12ms
+
+
+PortScan
+--------------------------------------------------------------------------------
+Description: Port scanning reconnaissance attacks
+Type: ATTACK
+Samples: 49982 (Benign: 49748, Attack: 234)
+
+Performance Metrics:
+  Accuracy:  0.9298 (92.98%)
+  Precision: 0.0616 (6.16%)
+  Recall:    0.9829 (98.29%)
+  F1-Score:  0.1159 (11.59%)
+  ROC AUC:   0.9932
+  FPR:       0.0705 (7.05%)
+
+Confusion Matrix:
+  True Negatives:     46242
+  False Positives:     3506
+  False Negatives:        4
+  True Positives:       230
+
+Inference Time: 5.94s
+Time per sample: 0.12ms
+
+
+WebAttacks
+--------------------------------------------------------------------------------
+Description: Web-based attacks (SQL injection, XSS, etc.)
+Type: ATTACK
+Samples: 49941 (Benign: 48859, Attack: 1082)
+
+Performance Metrics:
+  Accuracy:  0.9471 (94.71%)
+  Precision: 0.2615 (26.15%)
+  Recall:    0.7911 (79.11%)
+  F1-Score:  0.3930 (39.30%)
+  ROC AUC:   0.9548
+  FPR:       0.0495 (4.95%)
+
+Confusion Matrix:
+  True Negatives:     46441
+  False Positives:     2418
+  False Negatives:      226
+  True Positives:       856
+
+Inference Time: 5.77s
+Time per sample: 0.12ms
+
+
+Infiltration
+--------------------------------------------------------------------------------
+Description: Network infiltration and exploitation
+Type: ATTACK
+Samples: 49983 (Benign: 49983, Attack: 0)
+
+Performance Metrics:
+  Accuracy:  0.9367 (93.67%)
+  Precision: 0.0000 (0.00%)
+  Recall:    0.0000 (0.00%)
+  F1-Score:  0.0000 (0.00%)
+  ROC AUC:   0.0000
+  FPR:       0.0633 (6.33%)
+
+Confusion Matrix:
+  True Negatives:     46817
+  False Positives:     3166
+  False Negatives:        0
+  True Positives:         0
+
+Inference Time: 5.59s
+Time per sample: 0.11ms
+
+
+Monday_Normal
+--------------------------------------------------------------------------------
+Description: Normal Monday working hours traffic
+Type: BENIGN
+Samples: 49934 (Benign: 49934, Attack: 0)
+
+Performance Metrics:
+  Accuracy:  0.9004 (90.04%)
+  Precision: 0.0000 (0.00%)
+  Recall:    0.0000 (0.00%)
+  F1-Score:  0.0000 (0.00%)
+  ROC AUC:   0.0000
+  FPR:       0.0996 (9.96%)
+
+Confusion Matrix:
+  True Negatives:     44962
+  False Positives:     4972
+  False Negatives:        0
+  True Positives:         0
+
+Inference Time: 5.57s
+Time per sample: 0.11ms
+
+
+Tuesday_Normal
+--------------------------------------------------------------------------------
+Description: Normal Tuesday working hours traffic
+Type: BENIGN
+Samples: 49956 (Benign: 44764, Attack: 5192)
+
+Performance Metrics:
+  Accuracy:  0.8450 (84.50%)
+  Precision: 0.3937 (39.37%)
+  Recall:    0.9089 (90.89%)
+  F1-Score:  0.5494 (54.94%)
+  ROC AUC:   0.9631
+  FPR:       0.1624 (16.24%)
+
+Confusion Matrix:
+  True Negatives:     37496
+  False Positives:     7268
+  False Negatives:      473
+  True Positives:      4719
+
+Inference Time: 5.70s
+Time per sample: 0.11ms
+
+
+Wednesday_Normal
+--------------------------------------------------------------------------------
+Description: Normal Wednesday working hours traffic
+Type: BENIGN
+Samples: 49952 (Benign: 47291, Attack: 2661)
+
+Performance Metrics:
+  Accuracy:  0.9158 (91.58%)
+  Precision: 0.3716 (37.16%)
+  Recall:    0.8403 (84.03%)
+  F1-Score:  0.5153 (51.53%)
+  ROC AUC:   0.9628
+  FPR:       0.0800 (8.00%)
+
+Confusion Matrix:
+  True Negatives:     43509
+  False Positives:     3782
+  False Negatives:      425
+  True Positives:      2236
+
+Inference Time: 5.44s
+Time per sample: 0.11ms
+
+
+Friday_Morning_Normal
+--------------------------------------------------------------------------------
+Description: Normal Friday morning traffic
+Type: BENIGN
+Samples: 49952 (Benign: 49950, Attack: 2)
+
+Performance Metrics:
+  Accuracy:  0.9531 (95.31%)
+  Precision: 0.0004 (0.04%)
+  Recall:    0.5000 (50.00%)
+  F1-Score:  0.0009 (0.09%)
+  ROC AUC:   0.8821
+  FPR:       0.0468 (4.68%)
+
+Confusion Matrix:
+  True Negatives:     47610
+  False Positives:     2340
+  False Negatives:        1
+  True Positives:         1
+
+Inference Time: 5.86s
+Time per sample: 0.12ms
+

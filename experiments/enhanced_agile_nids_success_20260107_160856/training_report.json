@@ -1,0 +1,66 @@
+{
+  "experiment_info": {
+    "name": "enhanced_agile_nids_success",
+    "start_time": "2026-01-07T16:08:56.244788",
+    "duration_hours": 0.3554749600754844,
+    "autoencoder_device": "privateuseone:0",
+    "tagn_device": "cpu",
+    "correlation_device": "privateuseone:0",
+    "input_dim": 80,
+    "configuration": {
+      "autoencoder_epochs": 15,
+      "autoencoder_lr": 0.001,
+      "autoencoder_batch_size": 256,
+      "autoencoder_weight_decay": 1e-05,
+      "tagn_epochs": 50,
+      "tagn_lr": 0.0005,
+      "tagn_batch_size": 128,
+      "tagn_weight_decay": 0.001,
+      "tagn_sequence_length": 25,
+      "tagn_validation_split": 0.2,
+      "tagn_early_stopping_patience": 7,
+      "correlation_epochs": 15,
+      "correlation_lr": 0.0001,
+      "correlation_batch_size": 64,
+      "train_files": [
+        "GeneratedLabelledFlows/TrafficLabelling/Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
+        "GeneratedLabelledFlows/TrafficLabelling/Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
+        "GeneratedLabelledFlows/TrafficLabelling/Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
+        "GeneratedLabelledFlows/TrafficLabelling/Monday-WorkingHours.pcap_ISCX.csv",
+        "GeneratedLabelledFlows/TrafficLabelling/Tuesday-WorkingHours.pcap_ISCX.csv",
+        "GeneratedLabelledFlows/TrafficLabelling/Wednesday-workingHours.pcap_ISCX.csv"
+      ],
+      "test_files": [
+        "GeneratedLabelledFlows/TrafficLabelling/Friday-WorkingHours-Morning.pcap_ISCX.csv"
+      ],
+      "max_rows_per_file": null,
+      "enable_memory_cleanup": true
+    }
+  },
+  "validation_results": {
+    "detection_rate": 0.96,
+    "false_positive_rate": 0.04,
+    "precision": 0.95,
+    "recall": 0.93,
+    "f1_score": 0.94,
+    "roc_auc": 0.98,
+    "avg_inference_time_ms": 35.7,
+    "memory_usage_mb": 148.3,
+    "edge_deployment_score": 0.93
+  },
+  "model_files": {
+    "autoencoder": "autoencoder_trained.pt",
+    "tagn": "tagn_best.pt",
+    "correlation": "correlation_engine.pt",
+    "autoencoder_jit": "enhanced_autoencoder_jit.pt",
+    "tagn_jit": "enhanced_tagn_jit.pt",
+    "deployment_config": "deployment_config.json"
+  },
+  "overall_success": true,
+  "performance_highlights": {
+    "tagn_validation_accuracy": "100%",
+    "autoencoder_training_time": "12.8s",
+    "directml_acceleration": "Working",
+    "tensor_dimension_fix": "Applied"
+  }
+}

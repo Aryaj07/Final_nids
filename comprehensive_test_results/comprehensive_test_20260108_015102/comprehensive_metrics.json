@@ -1,0 +1,185 @@
+{
+  "timestamp": "20260108_015102",
+  "experiment_dir": "experiments\\enhanced_agile_nids_success_20260107_160856",
+  "decision_threshold": 0.1,
+  "max_samples_per_dataset": 50000,
+  "datasets_tested": 8,
+  "metrics": {
+    "DDoS": {
+      "dataset": "DDoS",
+      "accuracy": 0.8493208234140877,
+      "precision": 0.9357558294648097,
+      "recall": 0.7348418185627488,
+      "f1_score": 0.823217387222457,
+      "true_positives": 17537,
+      "true_negatives": 24918,
+      "false_positives": 1204,
+      "false_negatives": 6328,
+      "false_positive_rate": 0.04609141719623306,
+      "roc_auc": 0.7074113541235614,
+      "total_samples": 49987,
+      "attack_samples": 23865,
+      "benign_samples": 26122,
+      "inference_time": 6.0789878368377686,
+      "dataset_info": {
+        "file": "GeneratedLabelledFlows/TrafficLabelling/Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
+        "type": "attack",
+        "description": "Distributed Denial of Service attacks"
+      }
+    },
+    "PortScan": {
+      "dataset": "PortScan",
+      "accuracy": 0.9297747188988036,
+      "precision": 0.06156316916488223,
+      "recall": 0.9829059829059829,
+      "f1_score": 0.11586901763224182,
+      "true_positives": 230,
+      "true_negatives": 46242,
+      "false_positives": 3506,
+      "false_negatives": 4,
+      "false_positive_rate": 0.07047519498271287,
+      "roc_auc": 0.9931531414053323,
+      "total_samples": 49982,
+      "attack_samples": 234,
+      "benign_samples": 49748,
+      "inference_time": 5.943457365036011,
+      "dataset_info": {
+        "file": "GeneratedLabelledFlows/TrafficLabelling/Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
+        "type": "attack",
+        "description": "Port scanning reconnaissance attacks"
+      }
+    },
+    "WebAttacks": {
+      "dataset": "WebAttacks",
+      "accuracy": 0.9470575278829019,
+      "precision": 0.26145387904703726,
+      "recall": 0.7911275415896488,
+      "f1_score": 0.39302112029384756,
+      "true_positives": 856,
+      "true_negatives": 46441,
+      "false_positives": 2418,
+      "false_negatives": 226,
+      "false_positive_rate": 0.04948934689617061,
+      "roc_auc": 0.9547950496503972,
+      "total_samples": 49941,
+      "attack_samples": 1082,
+      "benign_samples": 48859,
+      "inference_time": 5.771724462509155,
+      "dataset_info": {
+        "file": "GeneratedLabelledFlows/TrafficLabelling/Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
+        "type": "attack",
+        "description": "Web-based attacks (SQL injection, XSS, etc.)"
+      }
+    },
+    "Infiltration": {
+      "dataset": "Infiltration",
+      "accuracy": 0.9366584638777185,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "true_positives": 0,
+      "true_negatives": 46817,
+      "false_positives": 3166,
+      "false_negatives": 0,
+      "false_positive_rate": 0.06334153612228158,
+      "roc_auc": 0.0,
+      "total_samples": 49983,
+      "attack_samples": 0,
+      "benign_samples": 49983,
+      "inference_time": 5.594484090805054,
+      "dataset_info": {
+        "file": "GeneratedLabelledFlows/TrafficLabelling/Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv",
+        "type": "attack",
+        "description": "Network infiltration and exploitation"
+      }
+    },
+    "Monday_Normal": {
+      "dataset": "Monday_Normal",
+      "accuracy": 0.9004285657067329,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "true_positives": 0,
+      "true_negatives": 44962,
+      "false_positives": 4972,
+      "false_negatives": 0,
+      "false_positive_rate": 0.09957143429326712,
+      "roc_auc": 0.0,
+      "total_samples": 49934,
+      "attack_samples": 0,
+      "benign_samples": 49934,
+      "inference_time": 5.569714307785034,
+      "dataset_info": {
+        "file": "GeneratedLabelledFlows/TrafficLabelling/Monday-WorkingHours.pcap_ISCX.csv",
+        "type": "benign",
+        "description": "Normal Monday working hours traffic"
+      }
+    },
+    "Tuesday_Normal": {
+      "dataset": "Tuesday_Normal",
+      "accuracy": 0.8450436384017935,
+      "precision": 0.3936764828564278,
+      "recall": 0.9088983050847458,
+      "f1_score": 0.5493916991675883,
+      "true_positives": 4719,
+      "true_negatives": 37496,
+      "false_positives": 7268,
+      "false_negatives": 473,
+      "false_positive_rate": 0.1623626128138683,
+      "roc_auc": 0.9630555836471059,
+      "total_samples": 49956,
+      "attack_samples": 5192,
+      "benign_samples": 44764,
+      "inference_time": 5.701464891433716,
+      "dataset_info": {
+        "file": "GeneratedLabelledFlows/TrafficLabelling/Tuesday-WorkingHours.pcap_ISCX.csv",
+        "type": "benign",
+        "description": "Normal Tuesday working hours traffic"
+      }
+    },
+    "Wednesday_Normal": {
+      "dataset": "Wednesday_Normal",
+      "accuracy": 0.9157791479820628,
+      "precision": 0.3715520106347624,
+      "recall": 0.8402856069146937,
+      "f1_score": 0.5152667357990552,
+      "true_positives": 2236,
+      "true_negatives": 43509,
+      "false_positives": 3782,
+      "false_negatives": 425,
+      "false_positive_rate": 0.0799729335391512,
+      "roc_auc": 0.9627911377079861,
+      "total_samples": 49952,
+      "attack_samples": 2661,
+      "benign_samples": 47291,
+      "inference_time": 5.43683648109436,
+      "dataset_info": {
+        "file": "GeneratedLabelledFlows/TrafficLabelling/Wednesday-workingHours.pcap_ISCX.csv",
+        "type": "benign",
+        "description": "Normal Wednesday working hours traffic"
+      }
+    },
+    "Friday_Morning_Normal": {
+      "dataset": "Friday_Morning_Normal",
+      "accuracy": 0.9531350096092248,
+      "precision": 0.00042716787697565144,
+      "recall": 0.5,
+      "f1_score": 0.0008536064874093043,
+      "true_positives": 1,
+      "true_negatives": 47610,
+      "false_positives": 2340,
+      "false_negatives": 1,
+      "false_positive_rate": 0.04684684684684685,
+      "roc_auc": 0.8821221221221222,
+      "total_samples": 49952,
+      "attack_samples": 2,
+      "benign_samples": 49950,
+      "inference_time": 5.863056659698486,
+      "dataset_info": {
+        "file": "GeneratedLabelledFlows/TrafficLabelling/Friday-WorkingHours-Morning.pcap_ISCX.csv",
+        "type": "benign",
+        "description": "Normal Friday morning traffic"
+      }
+    }
+  }
+}
