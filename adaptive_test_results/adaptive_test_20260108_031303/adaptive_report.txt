@@ -1,0 +1,191 @@
+================================================================================
+AGILE NIDS - ADAPTIVE THRESHOLD TESTING REPORT
+================================================================================
+
+Test Date: 2026-01-08 03:13:05
+Experiment: experiments\enhanced_agile_nids_success_20260108_022655
+Adaptive Thresholds: ENABLED
+Datasets Tested: 8
+
+================================================================================
+OVERALL SUMMARY
+================================================================================
+
+Attack Datasets (4):
+  Average Detection Rate (Recall): 0.7040 (70.40%)
+  Average Precision: 0.3098 (30.98%)
+  Average F1 Score: 0.3750 (37.50%)
+  Average FPR: 0.0672 (6.72%)
+
+================================================================================
+DETAILED RESULTS BY DATASET
+================================================================================
+
+
+DDoS
+--------------------------------------------------------------------------------
+Description: Distributed Denial of Service attacks
+Type: ATTACK
+Threshold: 0.033618
+Samples: 49987 (Benign: 26122, Attack: 23865)
+
+Performance Metrics:
+  Accuracy:  0.9501 (95.01%)
+  Precision: 0.9125 (91.25%)
+  Recall:    0.9904 (99.04%)
+  F1-Score:  0.9499 (94.99%)
+  FPR:       0.0867 (8.67%)
+
+Confusion Matrix:
+  True Negatives:     23856
+  False Positives:     2266
+  False Negatives:      229
+  True Positives:     23636
+
+
+PortScan
+--------------------------------------------------------------------------------
+Description: Port scanning reconnaissance attacks
+Type: ATTACK
+Threshold: 0.699648
+Samples: 49982 (Benign: 49748, Attack: 234)
+
+Performance Metrics:
+  Accuracy:  0.9697 (96.97%)
+  Precision: 0.1267 (12.67%)
+  Recall:    0.9274 (92.74%)
+  F1-Score:  0.2229 (22.29%)
+  FPR:       0.0301 (3.01%)
+
+Confusion Matrix:
+  True Negatives:     48252
+  False Positives:     1496
+  False Negatives:       17
+  True Positives:       217
+
+
+WebAttacks
+--------------------------------------------------------------------------------
+Description: Web-based attacks (SQL injection, XSS, etc.)
+Type: ATTACK
+Threshold: 0.076131
+Samples: 49941 (Benign: 48859, Attack: 1082)
+
+Performance Metrics:
+  Accuracy:  0.9199 (91.99%)
+  Precision: 0.2000 (20.00%)
+  Recall:    0.8983 (89.83%)
+  F1-Score:  0.3271 (32.71%)
+  FPR:       0.0796 (7.96%)
+
+Confusion Matrix:
+  True Negatives:     44970
+  False Positives:     3889
+  False Negatives:      110
+  True Positives:       972
+
+
+Infiltration
+--------------------------------------------------------------------------------
+Description: Network infiltration and exploitation
+Type: ATTACK
+Threshold: 0.100000
+Samples: 49983 (Benign: 49983, Attack: 0)
+
+Performance Metrics:
+  Accuracy:  0.9276 (92.76%)
+  Precision: 0.0000 (0.00%)
+  Recall:    0.0000 (0.00%)
+  F1-Score:  0.0000 (0.00%)
+  FPR:       0.0724 (7.24%)
+
+Confusion Matrix:
+  True Negatives:     46365
+  False Positives:     3618
+  False Negatives:        0
+  True Positives:         0
+
+
+Monday_Normal
+--------------------------------------------------------------------------------
+Description: Normal Monday working hours traffic
+Type: BENIGN
+Threshold: 0.100000
+Samples: 49934 (Benign: 49934, Attack: 0)
+
+Performance Metrics:
+  Accuracy:  0.8359 (83.59%)
+  Precision: 0.0000 (0.00%)
+  Recall:    0.0000 (0.00%)
+  F1-Score:  0.0000 (0.00%)
+  FPR:       0.1641 (16.41%)
+
+Confusion Matrix:
+  True Negatives:     41738
+  False Positives:     8196
+  False Negatives:        0
+  True Positives:         0
+
+
+Tuesday_Normal
+--------------------------------------------------------------------------------
+Description: Normal Tuesday working hours traffic
+Type: BENIGN
+Threshold: 0.100000
+Samples: 49956 (Benign: 44764, Attack: 5192)
+
+Performance Metrics:
+  Accuracy:  0.7767 (77.67%)
+  Precision: 0.2651 (26.51%)
+  Recall:    0.6481 (64.81%)
+  F1-Score:  0.3763 (37.63%)
+  FPR:       0.2084 (20.84%)
+
+Confusion Matrix:
+  True Negatives:     35434
+  False Positives:     9330
+  False Negatives:     1827
+  True Positives:      3365
+
+
+Wednesday_Normal
+--------------------------------------------------------------------------------
+Description: Normal Wednesday working hours traffic
+Type: BENIGN
+Threshold: 0.100000
+Samples: 49952 (Benign: 47291, Attack: 2661)
+
+Performance Metrics:
+  Accuracy:  0.8741 (87.41%)
+  Precision: 0.2964 (29.64%)
+  Recall:    0.9925 (99.25%)
+  F1-Score:  0.4564 (45.64%)
+  FPR:       0.1326 (13.26%)
+
+Confusion Matrix:
+  True Negatives:     41021
+  False Positives:     6270
+  False Negatives:       20
+  True Positives:      2641
+
+
+Friday_Morning_Normal
+--------------------------------------------------------------------------------
+Description: Normal Friday morning traffic
+Type: BENIGN
+Threshold: 0.100000
+Samples: 49952 (Benign: 49950, Attack: 2)
+
+Performance Metrics:
+  Accuracy:  0.9410 (94.10%)
+  Precision: 0.0003 (0.03%)
+  Recall:    0.5000 (50.00%)
+  F1-Score:  0.0007 (0.07%)
+  FPR:       0.0590 (5.90%)
+
+Confusion Matrix:
+  True Negatives:     47005
+  False Positives:     2945
+  False Negatives:        1
+  True Positives:         1
+

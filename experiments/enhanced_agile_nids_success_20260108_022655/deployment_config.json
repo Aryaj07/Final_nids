@@ -1,0 +1,35 @@
+{
+  "system_info": {
+    "name": "Enhanced AGILE NIDS",
+    "version": "2.0.0",
+    "deployment_target": "NanoPi R3S",
+    "optimization_level": "edge",
+    "device": "arm64"
+  },
+  "model_config": {
+    "input_dimension": 80,
+    "autoencoder_path": "enhanced_autoencoder_jit.pt",
+    "tagn_path": "enhanced_tagn_jit.pt",
+    "quantization": "dynamic",
+    "optimization_target": "latency"
+  },
+  "processing_config": {
+    "max_batch_size": 32,
+    "sequence_length": 50,
+    "decision_threshold": 0.552790509313345,
+    "confidence_threshold": 0.8,
+    "enable_adaptive_thresholds": true
+  },
+  "performance_targets": {
+    "max_latency_ms": 100,
+    "min_throughput_fps": 10,
+    "max_memory_mb": 512,
+    "max_cpu_percent": 80
+  },
+  "alert_config": {
+    "enable_llm_intelligence": true,
+    "alert_id_prefix": "AGILE-EDGE",
+    "structured_output": true,
+    "json_format": true
+  }
+}

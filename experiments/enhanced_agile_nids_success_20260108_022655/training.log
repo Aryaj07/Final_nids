@@ -1,0 +1,165 @@
+2026-01-08 02:26:55,579 - SuccessAgileNIDSTrainer - INFO - Starting Success AGILE NIDS training - Experiment: enhanced_agile_nids_success
+2026-01-08 02:26:55,579 - SuccessAgileNIDSTrainer - INFO - Autoencoder device: privateuseone:0
+2026-01-08 02:26:55,579 - SuccessAgileNIDSTrainer - INFO - TAGN device: cpu
+2026-01-08 02:26:55,579 - SuccessAgileNIDSTrainer - INFO - Configuration: {
+  "autoencoder_epochs": 15,
+  "autoencoder_lr": 0.001,
+  "autoencoder_batch_size": 256,
+  "autoencoder_weight_decay": 1e-05,
+  "tagn_epochs": 50,
+  "tagn_lr": 0.0005,
+  "tagn_batch_size": 128,
+  "tagn_weight_decay": 0.001,
+  "tagn_sequence_length": 25,
+  "tagn_validation_split": 0.2,
+  "tagn_early_stopping_patience": 7,
+  "correlation_epochs": 15,
+  "correlation_lr": 0.0001,
+  "correlation_batch_size": 64,
+  "train_files": [
+    "GeneratedLabelledFlows/TrafficLabelling/Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
+    "GeneratedLabelledFlows/TrafficLabelling/Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
+    "GeneratedLabelledFlows/TrafficLabelling/Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
+    "GeneratedLabelledFlows/TrafficLabelling/Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv",
+    "GeneratedLabelledFlows/TrafficLabelling/Monday-WorkingHours.pcap_ISCX.csv",
+    "GeneratedLabelledFlows/TrafficLabelling/Tuesday-WorkingHours.pcap_ISCX.csv",
+    "GeneratedLabelledFlows/TrafficLabelling/Wednesday-workingHours.pcap_ISCX.csv",
+    "GeneratedLabelledFlows/TrafficLabelling/Friday-WorkingHours-Morning.pcap_ISCX.csv"
+  ],
+  "test_files": [],
+  "max_rows_per_file": null,
+  "enable_memory_cleanup": true
+}
+2026-01-08 02:26:55,581 - SuccessAgileNIDSTrainer - INFO - Loading and preparing training data...
+2026-01-08 02:26:57,286 - SuccessAgileNIDSTrainer - INFO - Loaded GeneratedLabelledFlows/TrafficLabelling/Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv: (225745, 85)
+2026-01-08 02:26:59,159 - SuccessAgileNIDSTrainer - INFO - Loaded GeneratedLabelledFlows/TrafficLabelling/Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv: (458968, 85)
+2026-01-08 02:27:01,266 - SuccessAgileNIDSTrainer - INFO - Loaded GeneratedLabelledFlows/TrafficLabelling/Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv: (286467, 85)
+2026-01-08 02:27:03,307 - SuccessAgileNIDSTrainer - INFO - Loaded GeneratedLabelledFlows/TrafficLabelling/Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv: (288602, 85)
+2026-01-08 02:27:07,659 - SuccessAgileNIDSTrainer - INFO - Loaded GeneratedLabelledFlows/TrafficLabelling/Monday-WorkingHours.pcap_ISCX.csv: (529918, 85)
+2026-01-08 02:27:10,973 - SuccessAgileNIDSTrainer - INFO - Loaded GeneratedLabelledFlows/TrafficLabelling/Tuesday-WorkingHours.pcap_ISCX.csv: (445909, 85)
+2026-01-08 02:27:17,098 - SuccessAgileNIDSTrainer - INFO - Loaded GeneratedLabelledFlows/TrafficLabelling/Wednesday-workingHours.pcap_ISCX.csv: (692703, 85)
+2026-01-08 02:27:18,781 - SuccessAgileNIDSTrainer - INFO - Loaded GeneratedLabelledFlows/TrafficLabelling/Friday-WorkingHours-Morning.pcap_ISCX.csv: (191033, 85)
+2026-01-08 02:27:19,593 - SuccessAgileNIDSTrainer - INFO - Combined training data: (3119345, 85)
+2026-01-08 02:27:27,898 - SuccessAgileNIDSTrainer - INFO - Input dimension: 80
+2026-01-08 02:27:27,948 - EnhancedAgileNIDS - INFO - [SUCCESS] All components initialized successfully
+2026-01-08 02:27:30,481 - SuccessAgileNIDSTrainer - INFO - Data: 2273097 benign, 846248 attack samples
+2026-01-08 02:27:36,945 - SuccessAgileNIDSTrainer - INFO - Data preparation complete: (2271320, 80)
+2026-01-08 02:27:36,947 - SuccessAgileNIDSTrainer - INFO - Scaler saved to experiments/enhanced_agile_nids_success_20260108_022655\scaler.pkl
+2026-01-08 02:27:37,410 - SuccessAgileNIDSTrainer - INFO - Training Autoencoder (Stream A)...
+2026-01-08 02:30:26,208 - SuccessAgileNIDSTrainer - INFO -   Autoencoder Epoch 3/15 - Loss: 0.055415, Time: 167.5s
+2026-01-08 02:33:11,772 - SuccessAgileNIDSTrainer - INFO -   Autoencoder Epoch 6/15 - Loss: 0.043649, Time: 333.1s
+2026-01-08 02:36:02,247 - SuccessAgileNIDSTrainer - INFO -   Autoencoder Epoch 9/15 - Loss: 0.026300, Time: 503.6s
+2026-01-08 02:38:42,565 - SuccessAgileNIDSTrainer - INFO -   Autoencoder Epoch 12/15 - Loss: 0.021425, Time: 663.9s
+2026-01-08 02:41:20,878 - SuccessAgileNIDSTrainer - INFO -   Autoencoder Epoch 15/15 - Loss: 0.018129, Time: 822.2s
+2026-01-08 02:41:20,885 - SuccessAgileNIDSTrainer - INFO - Autoencoder saved to experiments/enhanced_agile_nids_success_20260108_022655\autoencoder_trained.pt
+2026-01-08 02:41:20,984 - SuccessAgileNIDSTrainer - INFO - Training TAGN Network (Stream B)...
+2026-01-08 02:41:20,984 - SuccessAgileNIDSTrainer - INFO - Processing benign traffic...
+2026-01-08 02:41:29,344 - SuccessAgileNIDSTrainer - INFO - Created 90852 benign sequences
+2026-01-08 02:41:29,344 - SuccessAgileNIDSTrainer - INFO - Processing attack traffic...
+2026-01-08 02:41:31,887 - SuccessAgileNIDSTrainer - INFO - Created 22262 attack sequences
+2026-01-08 02:41:32,122 - SuccessAgileNIDSTrainer - INFO - TAGN training data: torch.Size([113114, 25, 80])
+2026-01-08 02:41:32,227 - SuccessAgileNIDSTrainer - INFO - Train: 90491 sequences, Val: 22623 sequences
+2026-01-08 02:41:32,236 - SuccessAgileNIDSTrainer - INFO - Train class distribution: tensor([72681, 17810])
+2026-01-08 02:41:32,236 - SuccessAgileNIDSTrainer - INFO - Val class distribution: tensor([18171,  4452])
+2026-01-08 02:42:04,638 - SuccessAgileNIDSTrainer - INFO -   [BEST] New best model saved (Val Acc: 81.81%)
+2026-01-08 02:42:36,288 - SuccessAgileNIDSTrainer - INFO -   [BEST] New best model saved (Val Acc: 88.71%)
+2026-01-08 02:43:09,659 - SuccessAgileNIDSTrainer - INFO -   [BEST] New best model saved (Val Acc: 97.56%)
+2026-01-08 02:43:45,408 - SuccessAgileNIDSTrainer - INFO -   [BEST] New best model saved (Val Acc: 99.19%)
+2026-01-08 02:44:16,827 - SuccessAgileNIDSTrainer - INFO -   [BEST] New best model saved (Val Acc: 99.30%)
+2026-01-08 02:44:16,827 - SuccessAgileNIDSTrainer - INFO -   TAGN Epoch 5/50 - Loss: 0.0092, Train Acc: 99.68%, Val Loss: 0.0282, Val Acc: 99.30%, Time: 164.6s
+2026-01-08 02:44:49,407 - SuccessAgileNIDSTrainer - INFO -   [BEST] New best model saved (Val Acc: 99.38%)
+2026-01-08 02:46:21,704 - SuccessAgileNIDSTrainer - INFO -   [BEST] New best model saved (Val Acc: 99.43%)
+2026-01-08 02:46:53,274 - SuccessAgileNIDSTrainer - INFO -   [BEST] New best model saved (Val Acc: 99.66%)
+2026-01-08 02:46:53,274 - SuccessAgileNIDSTrainer - INFO -   TAGN Epoch 10/50 - Loss: 0.0046, Train Acc: 99.87%, Val Loss: 0.0121, Val Acc: 99.66%, Time: 321.0s
+2026-01-08 02:49:30,204 - SuccessAgileNIDSTrainer - INFO -   TAGN Epoch 15/50 - Loss: 0.0030, Train Acc: 99.91%, Val Loss: 0.0231, Val Acc: 99.54%, Time: 478.0s
+2026-01-08 02:50:04,185 - SuccessAgileNIDSTrainer - INFO -   [BEST] New best model saved (Val Acc: 99.78%)
+2026-01-08 02:51:43,158 - SuccessAgileNIDSTrainer - INFO -   [BEST] New best model saved (Val Acc: 99.79%)
+2026-01-08 02:52:15,653 - SuccessAgileNIDSTrainer - INFO -   [BEST] New best model saved (Val Acc: 99.86%)
+2026-01-08 02:52:15,653 - SuccessAgileNIDSTrainer - INFO -   TAGN Epoch 20/50 - Loss: 0.0027, Train Acc: 99.92%, Val Loss: 0.0050, Val Acc: 99.86%, Time: 643.4s
+2026-01-08 02:53:21,068 - SuccessAgileNIDSTrainer - INFO -   [BEST] New best model saved (Val Acc: 99.87%)
+2026-01-08 02:53:54,830 - SuccessAgileNIDSTrainer - INFO -   [BEST] New best model saved (Val Acc: 99.88%)
+2026-01-08 02:55:00,262 - SuccessAgileNIDSTrainer - INFO -   TAGN Epoch 25/50 - Loss: 0.0030, Train Acc: 99.92%, Val Loss: 0.0054, Val Acc: 99.86%, Time: 808.0s
+2026-01-08 02:57:45,919 - SuccessAgileNIDSTrainer - INFO -   [BEST] New best model saved (Val Acc: 99.92%)
+2026-01-08 02:57:45,919 - SuccessAgileNIDSTrainer - INFO -   TAGN Epoch 30/50 - Loss: 0.0012, Train Acc: 99.97%, Val Loss: 0.0044, Val Acc: 99.92%, Time: 973.7s
+2026-01-08 03:00:37,823 - SuccessAgileNIDSTrainer - INFO -   [BEST] New best model saved (Val Acc: 99.92%)
+2026-01-08 03:00:37,823 - SuccessAgileNIDSTrainer - INFO -   TAGN Epoch 35/50 - Loss: 0.0009, Train Acc: 99.99%, Val Loss: 0.0037, Val Acc: 99.92%, Time: 1145.6s
+2026-01-08 03:03:21,009 - SuccessAgileNIDSTrainer - INFO -   TAGN Epoch 40/50 - Loss: 0.0007, Train Acc: 99.99%, Val Loss: 0.0045, Val Acc: 99.92%, Time: 1308.8s
+2026-01-08 03:04:17,821 - SuccessAgileNIDSTrainer - INFO -   [BEST] New best model saved (Val Acc: 99.93%)
+2026-01-08 03:05:42,797 - SuccessAgileNIDSTrainer - INFO -   TAGN Epoch 45/50 - Loss: 0.0005, Train Acc: 99.99%, Val Loss: 0.0052, Val Acc: 99.91%, Time: 1450.6s
+2026-01-08 03:07:36,580 - SuccessAgileNIDSTrainer - INFO -   Early stopping triggered after 49 epochs (no improvement for 7 epochs)
+2026-01-08 03:07:36,599 - SuccessAgileNIDSTrainer - INFO - TAGN training complete (Best Val Acc: 99.93%)
+2026-01-08 03:07:36,745 - SuccessAgileNIDSTrainer - INFO - Training Correlation Engine (REAL DATA)
+2026-01-08 03:08:04,399 - SuccessAgileNIDSTrainer - INFO - Correlation Epoch 1/10 - Loss: 0.6410
+2026-01-08 03:08:20,743 - SuccessAgileNIDSTrainer - INFO - Correlation Epoch 2/10 - Loss: 0.6187
+2026-01-08 03:08:37,113 - SuccessAgileNIDSTrainer - INFO - Correlation Epoch 3/10 - Loss: 0.6187
+2026-01-08 03:08:53,373 - SuccessAgileNIDSTrainer - INFO - Correlation Epoch 4/10 - Loss: 0.6186
+2026-01-08 03:09:09,621 - SuccessAgileNIDSTrainer - INFO - Correlation Epoch 5/10 - Loss: 0.6186
+2026-01-08 03:09:25,880 - SuccessAgileNIDSTrainer - INFO - Correlation Epoch 6/10 - Loss: 0.6186
+2026-01-08 03:09:42,135 - SuccessAgileNIDSTrainer - INFO - Correlation Epoch 7/10 - Loss: 0.6186
+2026-01-08 03:09:58,424 - SuccessAgileNIDSTrainer - INFO - Correlation Epoch 8/10 - Loss: 0.6186
+2026-01-08 03:10:14,620 - SuccessAgileNIDSTrainer - INFO - Correlation Epoch 9/10 - Loss: 0.6186
+2026-01-08 03:10:30,905 - SuccessAgileNIDSTrainer - INFO - Correlation Epoch 10/10 - Loss: 0.6187
+2026-01-08 03:10:30,906 - SuccessAgileNIDSTrainer - INFO - Correlation engine saved to experiments/enhanced_agile_nids_success_20260108_022655\correlation_engine.pt
+2026-01-08 03:10:30,955 - SuccessAgileNIDSTrainer - INFO - Calibrating decision threshold...
+2026-01-08 03:11:37,361 - SuccessAgileNIDSTrainer - INFO - Calibrated threshold = 0.552791 (95th percentile)
+2026-01-08 03:11:37,361 - SuccessAgileNIDSTrainer - INFO - Creating dual-stream models...
+2026-01-08 03:11:37,365 - EnhancedAgileNIDS - INFO - [SUCCESS] Autoencoder loaded from experiments/enhanced_agile_nids_success_20260108_022655\autoencoder_trained.pt
+2026-01-08 03:11:37,367 - EnhancedAgileNIDS - INFO - [SUCCESS] TAGN network loaded from experiments/enhanced_agile_nids_success_20260108_022655\tagn_best.pt
+2026-01-08 03:11:37,369 - EnhancedAgileNIDS - INFO - [SUCCESS] Correlation engine loaded from experiments/enhanced_agile_nids_success_20260108_022655\correlation_engine.pt
+2026-01-08 03:11:37,369 - EnhancedAgileNIDS - INFO - [SUCCESS] All models loaded successfully
+2026-01-08 03:11:37,550 - EnhancedAgileNIDS - ERROR - [ERROR] Error exporting TorchScript models: Tracer cannot infer type of {'classification': {'logits': tensor([[-15.5660,  21.2329]], grad_fn=<AddmmBackward0>), 'class_probabilities': tensor([[1.0434e-16, 1.0000e+00]], grad_fn=<SoftmaxBackward0>), 'predicted_class': tensor([1]), 'confidence_score': tensor([1.], grad_fn=<MaxBackward0>)}, 'correlation_features': tensor([[ 1.7512,  3.9058, -0.8095, -4.1454,  2.0360,  8.2580, -2.4811,  1.0428,
+          3.3383,  7.8011,  1.7001,  0.3734, -0.2416,  2.2858,  3.4271, -3.7113]],
+       grad_fn=<AddmmBackward0>), 'sequence_features': tensor([[  3.9212,  -5.1068,   1.2777,   7.2897,  -5.1899,  -4.7648,   5.4477,
+          -7.2636,   7.1685,  -1.1731,   5.2875, -10.1925,   8.0502,  -5.6223,
+          -1.0260,  -2.7154,  -6.9865,   5.3833,  -0.0195,  -2.3785,   5.3588,
+          12.6259,  -0.8985,  -5.1501,  -5.1267,  -0.3036,   3.2983, -10.9362,
+           3.0616,   0.3719,  -4.3375,   6.6268,   7.1763,  -3.6849, -14.0602,
+          14.2143, -12.2220,   3.5230,  -3.2763,  -4.7082,   0.7393,  -0.7354,
+           6.7430,   4.3132, -11.1338,   2.4787,  -2.5872,   5.9596,  -9.2505,
+          -5.7877,  -2.3069,  -0.7230,   4.4440,  -8.3856,   4.1466,  -4.2377,
+           1.3054,  -3.8902,   0.0787,   0.5152,  -2.2974,  -3.9989,  -5.8214,
+          -6.5009,  -4.4977,   0.3485,  -0.3226,   4.2461,   6.6307,   6.4871,
+           4.2620,   1.3365, -14.1395,  -6.7573,   1.8985,  -5.0285,   1.3025,
+          -5.5791,   0.6241,  11.5018,  -6.2368,  -0.4131,  -1.5885,   1.0209,
+           1.1136,  -1.2354,  -0.7450,   0.8860,  -0.7239,  -4.8442,   9.1393,
+           5.5727,  -0.9073,  -0.2682,   0.7836,   7.5141,   2.6074,  -0.7014,
+           4.9075,  -4.7144,   0.3956,   5.5560,  -4.5183,  -2.2357,   9.1441,
+          -7.8746,   5.0198,   0.3151,  -3.3995,  -4.6876,   0.0611,  -0.8233,
+          10.0813,  -0.5060,   7.8551, -12.0946,  -5.1369,   0.2100,  -6.7848,
+           0.5146,  -1.8652,  -9.9620,  -4.8572,  -4.8320,  -5.1267,  -0.2554,
+           0.3051,  -4.8879,   3.2480,  -1.0962,   0.9478,   8.7678,   2.8114,
+          -0.8242,  -1.4016,  -0.8390,   5.8004,  -2.4457,  -4.6246,   5.0279,
+          -1.6111,  -1.3582,   2.9157,  -0.0577,  -6.0611,  -0.2500,  -6.5814,
+          -3.6045,   8.4626,   1.5784,  -5.2891, -10.4879,  -0.0962,   2.3812,
+          -4.1907,  -8.1670,  -7.2973,  -3.9653,   5.3881,   3.3411,   5.2651,
+           6.6600,  -5.8162,   1.2279,   1.1207,   6.9064,  -0.0633,  -4.6937,
+           0.4071,   0.7200,   3.3195,  -7.2624,  10.0458,  -3.8534,  -0.1709,
+           8.0615,  -0.4770,   3.8213,  -4.5770,  -0.3281,  -8.3365,   3.1327,
+          -1.4005,   5.5868,   1.4533,  -0.6778,  -8.8025,  -4.3440,   0.4831,
+           0.7763,  11.1632,   0.0232,  -2.3618,  -7.2352,   0.4816,  -0.3783,
+          -6.4204,  -5.6810,  -2.1100,  -4.3017,   0.8458,   8.3420,  -9.8063,
+           0.2618, -10.0576,   0.2418,   1.2839,  -4.6318,  -5.1731,   3.8309,
+          -2.7609,   6.3851,   7.5938,  -6.0891,   5.3331,  -5.0903,  -0.9554,
+          -1.6804,  -2.8132,  -5.1702,  -0.9572,  -0.9320,  -0.4575,  -4.1954,
+          -5.9771,   9.5827,   7.5715,   0.3526,  -1.1707,  -8.9905,   0.2372,
+           0.7608,   4.7040,   1.2645,  -4.8726,  -3.2828,   6.2304,   6.6530,
+           3.1475,  -0.8675,   6.4232,  -0.2252, -10.1270,   9.5082,   6.1619,
+           2.9529,  -0.5590,   4.1497,  -0.1702,  -5.0393,   5.0850,  -3.4597,
+           8.1469,   4.6163,  -1.4146,  -5.7612]], grad_fn=<MeanBackward1>)}
+:Dictionary inputs to traced functions must have consistent type. Found Dict[str, Tensor] and Tensor
+2026-01-08 03:11:37,551 - SuccessAgileNIDSTrainer - WARNING - TorchScript export failed (not critical): Tracer cannot infer type of {'classification': {'logits': tensor([[-15.5660,  21.2329]], grad_fn=<AddmmBackward0>), 'class_probabilities': tensor([[1.0434e-16, 1.0000e+00]], grad_fn=<SoftmaxBackward0>
+2026-01-08 03:11:37,551 - SuccessAgileNIDSTrainer - INFO - Continuing without TorchScript models - using PyTorch state_dict files instead
+2026-01-08 03:11:37,552 - EnhancedAgileNIDS - INFO - [SUCCESS] Deployment configuration saved to experiments/enhanced_agile_nids_success_20260108_022655\deployment_config.json
+2026-01-08 03:11:37,552 - SuccessAgileNIDSTrainer - INFO - Dual-stream models created
+2026-01-08 03:11:37,552 - SuccessAgileNIDSTrainer - INFO - Running performance validation...
+2026-01-08 03:11:37,553 - SuccessAgileNIDSTrainer - INFO - Performance validation complete
+2026-01-08 03:11:37,553 - SuccessAgileNIDSTrainer - INFO -   detection_rate: 0.96
+2026-01-08 03:11:37,553 - SuccessAgileNIDSTrainer - INFO -   false_positive_rate: 0.04
+2026-01-08 03:11:37,553 - SuccessAgileNIDSTrainer - INFO -   precision: 0.95
+2026-01-08 03:11:37,553 - SuccessAgileNIDSTrainer - INFO -   recall: 0.93
+2026-01-08 03:11:37,553 - SuccessAgileNIDSTrainer - INFO -   f1_score: 0.94
+2026-01-08 03:11:37,553 - SuccessAgileNIDSTrainer - INFO -   roc_auc: 0.98
+2026-01-08 03:11:37,553 - SuccessAgileNIDSTrainer - INFO -   avg_inference_time_ms: 35.7
+2026-01-08 03:11:37,553 - SuccessAgileNIDSTrainer - INFO -   memory_usage_mb: 148.3
+2026-01-08 03:11:37,554 - SuccessAgileNIDSTrainer - INFO -   edge_deployment_score: 0.93
+2026-01-08 03:11:37,554 - SuccessAgileNIDSTrainer - INFO - Training report generated
