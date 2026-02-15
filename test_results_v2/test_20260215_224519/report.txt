@@ -1,0 +1,223 @@
+================================================================================
+HALO NIDS -- AGILE v2.1  COMPREHENSIVE TEST REPORT
+================================================================================
+
+Date: 2026-02-15 22:45:30.913713
+Experiment: experiments_v2\agile_v2_20260215_204502
+Anomaly threshold: 0.212570
+Confidence gate: 0.43
+Sequence length: 25
+Datasets tested: 8
+
+
+--------------------------------------------------------------------------------
+DDoS
+--------------------------------------------------------------------------------
+Samples: 59986  (benign=29589, attack=30397)
+Accuracy:  0.9971
+Precision: 0.9956
+Recall:    0.9986
+F1:        0.9971
+FPR:       0.0045
+ROC-AUC:   0.9989
+TP=30354  FP=133  FN=43  TN=29456
+Confidence gating: 30487 raw -> 30487 gated (0 filtered)
+Priorities: {'CRITICAL': 15358, 'HIGH': 89, 'MEDIUM': 15462, 'LOW': 29077}
+
+              precision    recall  f1-score   support
+
+      BENIGN       1.00      1.00      1.00     29589
+        DDoS       1.00      1.00      1.00     30397
+    PortScan       0.00      0.00      0.00         0
+  Web Attack       0.00      0.00      0.00         0
+
+    accuracy                           1.00     59986
+   macro avg       0.50      0.50      0.50     59986
+weighted avg       1.00      1.00      1.00     59986
+
+
+--------------------------------------------------------------------------------
+PortScan
+--------------------------------------------------------------------------------
+Samples: 59976  (benign=59604, attack=372)
+Accuracy:  0.9916
+Precision: 0.1405
+Recall:    0.0699
+F1:        0.0934
+FPR:       0.0027
+ROC-AUC:   0.4930
+TP=26  FP=159  FN=346  TN=59445
+Confidence gating: 185 raw -> 185 gated (0 filtered)
+Priorities: {'CRITICAL': 53, 'HIGH': 60, 'MEDIUM': 510, 'LOW': 59353}
+
+              precision    recall  f1-score   support
+
+      BENIGN       0.99      1.00      1.00     59604
+        DDoS       0.00      0.00      0.00         0
+    PortScan       0.00      0.00      0.00       372
+  Web Attack       0.00      0.00      0.00         0
+
+    accuracy                           0.99     59976
+   macro avg       0.25      0.25      0.25     59976
+weighted avg       0.99      0.99      0.99     59976
+
+
+--------------------------------------------------------------------------------
+WebAttacks
+--------------------------------------------------------------------------------
+Samples: 59937  (benign=58546, attack=1391)
+Accuracy:  0.9731
+Precision: 0.1882
+Recall:    0.0482
+F1:        0.0767
+FPR:       0.0049
+ROC-AUC:   0.4516
+TP=67  FP=289  FN=1324  TN=58257
+Confidence gating: 363 raw -> 356 gated (7 filtered)
+Priorities: {'CRITICAL': 85, 'HIGH': 40, 'MEDIUM': 469, 'LOW': 59343}
+
+              precision    recall  f1-score   support
+
+      BENIGN       0.98      1.00      0.99     58546
+        DDoS       0.00      0.00      0.00         0
+    PortScan       0.00      0.00      0.00         0
+  Web Attack       0.89      0.05      0.09      1391
+
+    accuracy                           0.97     59937
+   macro avg       0.47      0.26      0.27     59937
+weighted avg       0.98      0.97      0.97     59937
+
+
+--------------------------------------------------------------------------------
+Infiltration
+--------------------------------------------------------------------------------
+Samples: 59977  (benign=59977, attack=0)
+Accuracy:  0.9957
+Precision: 0.0000
+Recall:    0.0000
+F1:        0.0000
+FPR:       0.0043
+ROC-AUC:   0.0000
+TP=0  FP=260  FN=0  TN=59717
+Confidence gating: 260 raw -> 260 gated (0 filtered)
+Priorities: {'CRITICAL': 46, 'HIGH': 59, 'MEDIUM': 380, 'LOW': 59492}
+
+              precision    recall  f1-score   support
+
+      BENIGN       1.00      1.00      1.00     59977
+        DDoS       0.00      0.00      0.00         0
+    PortScan       0.00      0.00      0.00         0
+  Web Attack       0.00      0.00      0.00         0
+
+    accuracy                           1.00     59977
+   macro avg       0.25      0.25      0.25     59977
+weighted avg       1.00      1.00      1.00     59977
+
+
+--------------------------------------------------------------------------------
+Monday_Benign
+--------------------------------------------------------------------------------
+Samples: 59926  (benign=59926, attack=0)
+Accuracy:  0.9914
+Precision: 0.0000
+Recall:    0.0000
+F1:        0.0000
+FPR:       0.0086
+ROC-AUC:   0.0000
+TP=0  FP=517  FN=0  TN=59409
+Confidence gating: 527 raw -> 517 gated (10 filtered)
+Priorities: {'CRITICAL': 140, 'HIGH': 187, 'MEDIUM': 772, 'LOW': 58827}
+
+              precision    recall  f1-score   support
+
+      BENIGN       1.00      0.99      1.00     59926
+        DDoS       0.00      0.00      0.00         0
+    PortScan       0.00      0.00      0.00         0
+  Web Attack       0.00      0.00      0.00         0
+
+    accuracy                           0.99     59926
+   macro avg       0.25      0.25      0.25     59926
+weighted avg       1.00      0.99      1.00     59926
+
+
+--------------------------------------------------------------------------------
+Tuesday
+--------------------------------------------------------------------------------
+Samples: 59953  (benign=53277, attack=6676)
+Accuracy:  0.8763
+Precision: 0.3961
+Recall:    0.2115
+F1:        0.2758
+FPR:       0.0404
+ROC-AUC:   0.6452
+TP=1412  FP=2153  FN=5264  TN=51124
+Confidence gating: 3577 raw -> 3565 gated (12 filtered)
+Priorities: {'CRITICAL': 112, 'HIGH': 131, 'MEDIUM': 3746, 'LOW': 55964}
+
+              precision    recall  f1-score   support
+
+      BENIGN       0.91      0.96      0.93     53277
+        DDoS       0.00      0.00      0.00         0
+    PortScan       0.00      0.00      0.00         0
+  Web Attack       0.00      0.00      0.00         0
+       Probe       0.43      0.21      0.28      6676
+
+    accuracy                           0.88     59953
+   macro avg       0.27      0.23      0.24     59953
+weighted avg       0.85      0.88      0.86     59953
+
+
+--------------------------------------------------------------------------------
+Wednesday
+--------------------------------------------------------------------------------
+Samples: 59943  (benign=55781, attack=4162)
+Accuracy:  0.9775
+Precision: 0.9150
+Recall:    0.7448
+F1:        0.8212
+FPR:       0.0052
+ROC-AUC:   0.9187
+TP=3100  FP=288  FN=1062  TN=55493
+Confidence gating: 3433 raw -> 3388 gated (45 filtered)
+Priorities: {'CRITICAL': 137, 'HIGH': 141, 'MEDIUM': 3771, 'LOW': 55894}
+
+              precision    recall  f1-score   support
+
+      BENIGN       0.98      0.99      0.99     55781
+        DDoS       0.93      0.74      0.83      4162
+    PortScan       0.00      0.00      0.00         0
+  Web Attack       0.00      0.00      0.00         0
+       Probe       0.00      0.00      0.00         0
+
+    accuracy                           0.98     59943
+   macro avg       0.38      0.35      0.36     59943
+weighted avg       0.98      0.98      0.98     59943
+
+
+--------------------------------------------------------------------------------
+Friday_Morning
+--------------------------------------------------------------------------------
+Samples: 59949  (benign=59919, attack=30)
+Accuracy:  0.9942
+Precision: 0.0000
+Recall:    0.0000
+F1:        0.0000
+FPR:       0.0053
+ROC-AUC:   0.5666
+TP=0  FP=315  FN=30  TN=59604
+Confidence gating: 322 raw -> 315 gated (7 filtered)
+Priorities: {'CRITICAL': 107, 'HIGH': 80, 'MEDIUM': 463, 'LOW': 59299}
+
+              precision    recall  f1-score   support
+
+      BENIGN       1.00      0.99      1.00     59919
+        DDoS       0.00      0.00      0.00         0
+    PortScan       0.00      0.00      0.00         0
+  Web Attack       0.00      0.00      0.00         0
+      Botnet       0.00      0.00      0.00        30
+       Probe       0.00      0.00      0.00         0
+
+    accuracy                           0.99     59949
+   macro avg       0.17      0.17      0.17     59949
+weighted avg       1.00      0.99      1.00     59949
+

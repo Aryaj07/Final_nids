@@ -1,0 +1,242 @@
+{
+  "DDoS": {
+    "binary": {
+      "accuracy": 0.9970659820624812,
+      "precision": 0.9956374848295995,
+      "recall": 0.9985853867157943,
+      "f1": 0.9971092569476381,
+      "fpr": 0.004494913650343033,
+      "tp": 30354,
+      "fp": 133,
+      "fn": 43,
+      "tn": 29456,
+      "roc_auc": 0.998937766155862
+    },
+    "multi_class_report": "              precision    recall  f1-score   support\n\n      BENIGN       1.00      1.00      1.00     29589\n        DDoS       1.00      1.00      1.00     30397\n    PortScan       0.00      0.00      0.00         0\n  Web Attack       0.00      0.00      0.00         0\n\n    accuracy                           1.00     59986\n   macro avg       0.50      0.50      0.50     59986\nweighted avg       1.00      1.00      1.00     59986\n",
+    "priority_distribution": {
+      "CRITICAL": 15358,
+      "HIGH": 89,
+      "MEDIUM": 15462,
+      "LOW": 29077
+    },
+    "n_samples": 59986,
+    "n_benign": 29589,
+    "n_attack": 30397,
+    "confidence_gating": {
+      "raw_attack_predictions": 30487,
+      "after_gating": 30487,
+      "filtered_out": 0
+    },
+    "inference_time_s": 0.7656288146972656
+  },
+  "PortScan": {
+    "binary": {
+      "accuracy": 0.9915799653194611,
+      "precision": 0.14054054054054055,
+      "recall": 0.06989247311827956,
+      "f1": 0.0933572710951526,
+      "fpr": 0.0026676062009261124,
+      "tp": 26,
+      "fp": 159,
+      "fn": 346,
+      "tn": 59445,
+      "roc_auc": 0.49301088347971156
+    },
+    "multi_class_report": "              precision    recall  f1-score   support\n\n      BENIGN       0.99      1.00      1.00     59604\n        DDoS       0.00      0.00      0.00         0\n    PortScan       0.00      0.00      0.00       372\n  Web Attack       0.00      0.00      0.00         0\n\n    accuracy                           0.99     59976\n   macro avg       0.25      0.25      0.25     59976\nweighted avg       0.99      0.99      0.99     59976\n",
+    "priority_distribution": {
+      "CRITICAL": 53,
+      "HIGH": 60,
+      "MEDIUM": 510,
+      "LOW": 59353
+    },
+    "n_samples": 59976,
+    "n_benign": 59604,
+    "n_attack": 372,
+    "confidence_gating": {
+      "raw_attack_predictions": 185,
+      "after_gating": 185,
+      "filtered_out": 0
+    },
+    "inference_time_s": 0.7154273986816406
+  },
+  "WebAttacks": {
+    "binary": {
+      "accuracy": 0.9730884094966381,
+      "precision": 0.18820224719101122,
+      "recall": 0.04816678648454349,
+      "f1": 0.0767029192902118,
+      "fpr": 0.00493628941345267,
+      "tp": 67,
+      "fp": 289,
+      "fn": 1324,
+      "tn": 58257,
+      "roc_auc": 0.451626318621869
+    },
+    "multi_class_report": "              precision    recall  f1-score   support\n\n      BENIGN       0.98      1.00      0.99     58546\n        DDoS       0.00      0.00      0.00         0\n    PortScan       0.00      0.00      0.00         0\n  Web Attack       0.89      0.05      0.09      1391\n\n    accuracy                           0.97     59937\n   macro avg       0.47      0.26      0.27     59937\nweighted avg       0.98      0.97      0.97     59937\n",
+    "priority_distribution": {
+      "CRITICAL": 85,
+      "HIGH": 40,
+      "MEDIUM": 469,
+      "LOW": 59343
+    },
+    "n_samples": 59937,
+    "n_benign": 58546,
+    "n_attack": 1391,
+    "confidence_gating": {
+      "raw_attack_predictions": 363,
+      "after_gating": 356,
+      "filtered_out": 7
+    },
+    "inference_time_s": 0.7854552268981934
+  },
+  "Infiltration": {
+    "binary": {
+      "accuracy": 0.9956650049185521,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "fpr": 0.004334995081447889,
+      "tp": 0,
+      "fp": 260,
+      "fn": 0,
+      "tn": 59717,
+      "roc_auc": 0.0
+    },
+    "multi_class_report": "              precision    recall  f1-score   support\n\n      BENIGN       1.00      1.00      1.00     59977\n        DDoS       0.00      0.00      0.00         0\n    PortScan       0.00      0.00      0.00         0\n  Web Attack       0.00      0.00      0.00         0\n\n    accuracy                           1.00     59977\n   macro avg       0.25      0.25      0.25     59977\nweighted avg       1.00      1.00      1.00     59977\n",
+    "priority_distribution": {
+      "CRITICAL": 46,
+      "HIGH": 59,
+      "MEDIUM": 380,
+      "LOW": 59492
+    },
+    "n_samples": 59977,
+    "n_benign": 59977,
+    "n_attack": 0,
+    "confidence_gating": {
+      "raw_attack_predictions": 260,
+      "after_gating": 260,
+      "filtered_out": 0
+    },
+    "inference_time_s": 0.7556133270263672
+  },
+  "Monday_Benign": {
+    "binary": {
+      "accuracy": 0.9913726929880186,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "fpr": 0.008627307011981444,
+      "tp": 0,
+      "fp": 517,
+      "fn": 0,
+      "tn": 59409,
+      "roc_auc": 0.0
+    },
+    "multi_class_report": "              precision    recall  f1-score   support\n\n      BENIGN       1.00      0.99      1.00     59926\n        DDoS       0.00      0.00      0.00         0\n    PortScan       0.00      0.00      0.00         0\n  Web Attack       0.00      0.00      0.00         0\n\n    accuracy                           0.99     59926\n   macro avg       0.25      0.25      0.25     59926\nweighted avg       1.00      0.99      1.00     59926\n",
+    "priority_distribution": {
+      "CRITICAL": 140,
+      "HIGH": 187,
+      "MEDIUM": 772,
+      "LOW": 58827
+    },
+    "n_samples": 59926,
+    "n_benign": 59926,
+    "n_attack": 0,
+    "confidence_gating": {
+      "raw_attack_predictions": 527,
+      "after_gating": 517,
+      "filtered_out": 10
+    },
+    "inference_time_s": 0.861544132232666
+  },
+  "Tuesday": {
+    "binary": {
+      "accuracy": 0.8762864243657532,
+      "precision": 0.39607293127629734,
+      "recall": 0.21150389454763333,
+      "f1": 0.27575432086710283,
+      "fpr": 0.04041143457777277,
+      "tp": 1412,
+      "fp": 2153,
+      "fn": 5264,
+      "tn": 51124,
+      "roc_auc": 0.6451833950853849
+    },
+    "multi_class_report": "              precision    recall  f1-score   support\n\n      BENIGN       0.91      0.96      0.93     53277\n        DDoS       0.00      0.00      0.00         0\n    PortScan       0.00      0.00      0.00         0\n  Web Attack       0.00      0.00      0.00         0\n       Probe       0.43      0.21      0.28      6676\n\n    accuracy                           0.88     59953\n   macro avg       0.27      0.23      0.24     59953\nweighted avg       0.85      0.88      0.86     59953\n",
+    "priority_distribution": {
+      "CRITICAL": 112,
+      "HIGH": 131,
+      "MEDIUM": 3746,
+      "LOW": 55964
+    },
+    "n_samples": 59953,
+    "n_benign": 53277,
+    "n_attack": 6676,
+    "confidence_gating": {
+      "raw_attack_predictions": 3577,
+      "after_gating": 3565,
+      "filtered_out": 12
+    },
+    "inference_time_s": 0.7371702194213867
+  },
+  "Wednesday": {
+    "binary": {
+      "accuracy": 0.9774786046744407,
+      "precision": 0.9149940968122786,
+      "recall": 0.7448342143200385,
+      "f1": 0.8211920529801324,
+      "fpr": 0.005163048349796526,
+      "tp": 3100,
+      "fp": 288,
+      "fn": 1062,
+      "tn": 55493,
+      "roc_auc": 0.9186862743184218
+    },
+    "multi_class_report": "              precision    recall  f1-score   support\n\n      BENIGN       0.98      0.99      0.99     55781\n        DDoS       0.93      0.74      0.83      4162\n    PortScan       0.00      0.00      0.00         0\n  Web Attack       0.00      0.00      0.00         0\n       Probe       0.00      0.00      0.00         0\n\n    accuracy                           0.98     59943\n   macro avg       0.38      0.35      0.36     59943\nweighted avg       0.98      0.98      0.98     59943\n",
+    "priority_distribution": {
+      "CRITICAL": 137,
+      "HIGH": 141,
+      "MEDIUM": 3771,
+      "LOW": 55894
+    },
+    "n_samples": 59943,
+    "n_benign": 55781,
+    "n_attack": 4162,
+    "confidence_gating": {
+      "raw_attack_predictions": 3433,
+      "after_gating": 3388,
+      "filtered_out": 45
+    },
+    "inference_time_s": 0.9985992908477783
+  },
+  "Friday_Morning": {
+    "binary": {
+      "accuracy": 0.9942451083420908,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "fpr": 0.0052570970810594305,
+      "tp": 0,
+      "fp": 315,
+      "fn": 30,
+      "tn": 59604,
+      "roc_auc": 0.5666332882725013
+    },
+    "multi_class_report": "              precision    recall  f1-score   support\n\n      BENIGN       1.00      0.99      1.00     59919\n        DDoS       0.00      0.00      0.00         0\n    PortScan       0.00      0.00      0.00         0\n  Web Attack       0.00      0.00      0.00         0\n      Botnet       0.00      0.00      0.00        30\n       Probe       0.00      0.00      0.00         0\n\n    accuracy                           0.99     59949\n   macro avg       0.17      0.17      0.17     59949\nweighted avg       1.00      0.99      1.00     59949\n",
+    "priority_distribution": {
+      "CRITICAL": 107,
+      "HIGH": 80,
+      "MEDIUM": 463,
+      "LOW": 59299
+    },
+    "n_samples": 59949,
+    "n_benign": 59919,
+    "n_attack": 30,
+    "confidence_gating": {
+      "raw_attack_predictions": 322,
+      "after_gating": 315,
+      "filtered_out": 7
+    },
+    "inference_time_s": 0.7268767356872559
+  }
+}

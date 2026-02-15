@@ -1,0 +1,12 @@
+{
+  "input_dim": 80,
+  "num_classes": 7,
+  "anomaly_threshold": 0.2125703775882723,
+  "seq_len": 25,
+  "model_files": {
+    "autoencoder": "autoencoder.pt",
+    "tagn": "tagn_best.pt",
+    "correlation": "correlation_engine.pt",
+    "scaler": "scaler.pkl"
+  }
+}

@@ -1,0 +1,107 @@
+2026-02-15 20:45:02,453  INFO      GPU device: DirectML  |  TAGN will use CPU (LSTM constraint)
+2026-02-15 20:45:02,453  INFO      ================================================
+2026-02-15 20:45:02,453  INFO        HALO NIDS -- AGILE v2  Training Pipeline
+2026-02-15 20:45:02,453  INFO      ================================================
+
+2026-02-15 20:45:02,453  INFO      --- Phase 1: Loading & preprocessing data ---
+2026-02-15 20:45:03,863  INFO        Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv  ->  225745 rows
+2026-02-15 20:45:05,445  INFO        Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv  ->  286467 rows
+2026-02-15 20:45:07,217  INFO        Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv  ->  458968 rows
+2026-02-15 20:45:09,017  INFO        Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv  ->  288602 rows
+2026-02-15 20:45:13,167  INFO        Monday-WorkingHours.pcap_ISCX.csv  ->  529918 rows
+2026-02-15 20:45:16,196  INFO        Tuesday-WorkingHours.pcap_ISCX.csv  ->  445909 rows
+2026-02-15 20:45:21,291  INFO        Wednesday-workingHours.pcap_ISCX.csv  ->  692703 rows
+2026-02-15 20:45:21,678  INFO      Combined training data: 2928312 rows
+2026-02-15 20:45:23,480  INFO        Class 0 (BENIGN): 2372632 samples
+2026-02-15 20:45:23,482  INFO        Class 1 (DDoS): 380688 samples
+2026-02-15 20:45:23,484  INFO        Class 2 (PortScan): 158930 samples
+2026-02-15 20:45:23,486  INFO        Class 3 (Web Attack): 2180 samples
+2026-02-15 20:45:23,488  INFO        Class 4 (Infiltration): 47 samples
+2026-02-15 20:45:23,492  INFO        Class 6 (Probe): 13835 samples
+2026-02-15 20:45:29,837  INFO      Input dimension: 80
+2026-02-15 20:45:33,073  INFO      Phase 1 complete.
+
+2026-02-15 20:45:33,250  INFO      --- Phase 2A: Training Autoencoder (Stream A) ---
+2026-02-15 20:45:33,542  INFO        Training on 2082365 benign samples
+2026-02-15 20:47:16,790  INFO        Epoch  1/20  loss=0.199770
+2026-02-15 20:53:53,907  INFO        Epoch  5/20  loss=0.109585
+2026-02-15 21:02:31,551  INFO        Epoch 10/20  loss=0.098983
+2026-02-15 21:09:51,597  INFO        Epoch 15/20  loss=0.097575
+2026-02-15 21:17:06,447  INFO        Epoch 20/20  loss=0.096461
+2026-02-15 21:17:06,461  INFO        Saved -> experiments_v2\agile_v2_20260215_204502\autoencoder.pt
+
+2026-02-15 21:17:06,487  INFO      --- Phase 2B: Training TAGN (Stream B -- 7-class) ---
+2026-02-15 21:17:07,125  INFO        Created 105478 sequences (len=25)
+2026-02-15 21:17:07,125  INFO          Class 0 (BENIGN): 83295 seqs
+2026-02-15 21:17:07,126  INFO          Class 1 (DDoS): 15189 seqs
+2026-02-15 21:17:07,126  INFO          Class 2 (PortScan): 6352 seqs
+2026-02-15 21:17:07,126  INFO          Class 3 (Web Attack): 87 seqs
+2026-02-15 21:17:07,126  INFO          Class 4 (Infiltration): 2 seqs
+2026-02-15 21:17:07,127  INFO          Class 6 (Probe): 553 seqs
+2026-02-15 21:17:07,280  INFO        Train: 84382  Val: 21096
+2026-02-15 21:17:07,282  INFO        Class weights: ['0.000', '0.000', '0.001', '0.066', '2.307', '4.615', '0.010']
+2026-02-15 21:18:09,192  INFO        Epoch  1/60  tr_loss=0.2931  tr_acc=95.80%  va_acc=99.41%  best=99.41%
+2026-02-15 21:19:10,636  INFO        Epoch  2/60  tr_loss=0.0475  tr_acc=99.54%  va_acc=99.50%  best=99.50%
+2026-02-15 21:21:13,795  INFO        Epoch  4/60  tr_loss=0.0359  tr_acc=99.62%  va_acc=99.51%  best=99.51%
+2026-02-15 21:22:15,082  INFO        Epoch  5/60  tr_loss=0.0411  tr_acc=99.64%  va_acc=99.45%  best=99.51%
+2026-02-15 21:23:16,403  INFO        Epoch  6/60  tr_loss=0.0450  tr_acc=99.65%  va_acc=99.54%  best=99.54%
+2026-02-15 21:24:17,823  INFO        Epoch  7/60  tr_loss=0.0353  tr_acc=99.70%  va_acc=99.83%  best=99.83%
+2026-02-15 21:27:21,875  INFO        Epoch 10/60  tr_loss=0.0396  tr_acc=99.77%  va_acc=99.52%  best=99.83%
+2026-02-15 21:31:27,177  INFO        Epoch 14/60  tr_loss=0.0301  tr_acc=99.80%  va_acc=99.87%  best=99.87%
+2026-02-15 21:32:28,481  INFO        Epoch 15/60  tr_loss=0.0353  tr_acc=99.83%  va_acc=99.71%  best=99.87%
+2026-02-15 21:37:34,698  INFO        Epoch 20/60  tr_loss=0.0401  tr_acc=99.86%  va_acc=99.83%  best=99.87%
+2026-02-15 21:39:48,369  INFO        Epoch 22/60  tr_loss=0.0174  tr_acc=99.85%  va_acc=99.90%  best=99.90%
+2026-02-15 21:41:55,489  INFO        Epoch 24/60  tr_loss=0.0192  tr_acc=99.89%  va_acc=99.91%  best=99.91%
+2026-02-15 21:43:03,177  INFO        Epoch 25/60  tr_loss=0.0321  tr_acc=99.90%  va_acc=99.92%  best=99.92%
+2026-02-15 21:45:10,981  INFO        Epoch 27/60  tr_loss=0.0273  tr_acc=99.90%  va_acc=99.95%  best=99.95%
+2026-02-15 21:48:24,411  INFO        Epoch 30/60  tr_loss=0.0107  tr_acc=99.93%  va_acc=99.91%  best=99.95%
+2026-02-15 21:53:42,017  INFO        Epoch 35/60  tr_loss=0.0072  tr_acc=99.92%  va_acc=99.90%  best=99.95%
+2026-02-15 21:55:51,348  INFO        Early stopping at epoch 37
+2026-02-15 21:55:51,372  INFO        Best validation accuracy: 99.95%
+2026-02-15 21:55:51,372  INFO        Saved -> experiments_v2\agile_v2_20260215_204502\tagn_best.pt
+
+2026-02-15 21:55:51,461  INFO      --- Phase 3: Training Correlation Engine ---
+2026-02-15 21:55:52,288  INFO        Sequences: 105478  (benign: 83295  attack: 22183)
+2026-02-15 21:56:20,024  INFO        Epoch  1/15  loss=0.2033
+2026-02-15 21:58:06,539  INFO        Epoch  5/15  loss=0.0026
+2026-02-15 22:00:23,895  INFO        Epoch 10/15  loss=0.0014
+2026-02-15 22:02:39,659  INFO        Epoch 15/15  loss=0.0014
+2026-02-15 22:02:39,662  INFO        Saved -> experiments_v2\agile_v2_20260215_204502\correlation_engine.pt
+
+2026-02-15 22:02:39,723  INFO      --- Calibrating anomaly threshold ---
+2026-02-15 22:02:40,118  INFO        Benign anomaly-score  mean=0.479744  p95=0.090674  p99=0.212570
+2026-02-15 22:02:40,118  INFO        Selected threshold = 0.212570  (99th percentile)
+
+2026-02-15 22:02:40,120  INFO      --- Phase 5: Validation on test data ---
+2026-02-15 22:02:40,511  INFO        Test samples: 190911
+2026-02-15 22:03:20,325  INFO        Binary metrics (benign vs attack):
+2026-02-15 22:03:20,325  INFO          Accuracy : 0.8535
+2026-02-15 22:03:20,325  INFO          Precision: 0.0120
+2026-02-15 22:03:20,325  INFO          Recall   : 0.1641
+2026-02-15 22:03:20,325  INFO          F1       : 0.0224
+2026-02-15 22:03:20,325  INFO          FPR      : 0.1393
+2026-02-15 22:03:20,325  INFO          ROC-AUC  : 0.7800
+2026-02-15 22:03:20,325  INFO          TP=321  FP=26325  FN=1635  TN=162630
+2026-02-15 22:03:20,457  INFO      
+  Multi-class classification report:
+              precision    recall  f1-score   support
+
+      BENIGN       0.99      0.86      0.92    188955
+        DDoS       0.00      0.00      0.00         0
+    PortScan       0.00      0.00      0.00         0
+  Web Attack       0.00      0.00      0.00         0
+      Botnet       0.00      0.00      0.00      1956
+       Probe       0.00      0.00      0.00         0
+
+    accuracy                           0.85    190911
+   macro avg       0.17      0.14      0.15    190911
+weighted avg       0.98      0.85      0.91    190911
+
+2026-02-15 22:03:20,458  INFO        Priority CRITICAL: 293 alerts
+2026-02-15 22:03:20,458  INFO        Priority HIGH: 236 alerts
+2026-02-15 22:03:20,459  INFO        Priority MEDIUM: 27123 alerts
+2026-02-15 22:03:20,459  INFO        Priority LOW: 163259 alerts
+2026-02-15 22:03:20,460  INFO        Validation results saved.
+
+2026-02-15 22:03:20,466  INFO      --- Training complete in 78.3 minutes ---
+2026-02-15 22:03:20,466  INFO      Experiment directory: experiments_v2\agile_v2_20260215_204502

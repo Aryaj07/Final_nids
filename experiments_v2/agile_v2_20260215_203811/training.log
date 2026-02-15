@@ -1,0 +1,11 @@
+2026-02-15 20:38:11,563  INFO      GPU device: DirectML  |  TAGN will use CPU (LSTM constraint)
+2026-02-15 20:38:35,076  INFO      Combined training data: 2928312 rows
+2026-02-15 20:38:35,447  INFO        Class 0 (BENIGN): 2627473 samples
+2026-02-15 20:38:35,450  INFO        Class 1 (DDoS): 128027 samples
+2026-02-15 20:38:35,453  INFO        Class 2 (PortScan): 158930 samples
+2026-02-15 20:38:35,457  INFO        Class 4 (Infiltration): 47 samples
+2026-02-15 20:38:35,462  INFO        Class 6 (Probe): 13835 samples
+2026-02-15 20:38:43,080  INFO      Input dimension: 80
+2026-02-15 20:38:46,831  INFO      Phase 1 complete.
+
+2026-02-15 20:38:47,407  INFO        Training on 2336257 benign samples

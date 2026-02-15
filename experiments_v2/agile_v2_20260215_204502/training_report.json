@@ -1,0 +1,36 @@
+{
+  "experiment": "experiments_v2\\agile_v2_20260215_204502",
+  "duration_min": 78.3,
+  "input_dim": 80,
+  "config": {
+    "ae_epochs": 20,
+    "ae_lr": 0.001,
+    "ae_bs": 256,
+    "tagn_epochs": 60,
+    "tagn_lr": 0.0005,
+    "tagn_bs": 128,
+    "tagn_seq_len": 25,
+    "tagn_patience": 10,
+    "corr_epochs": 15,
+    "corr_lr": 0.0001,
+    "corr_bs": 64
+  },
+  "anomaly_threshold": 0.2125703775882723,
+  "validation": {
+    "binary": {
+      "accuracy": 0.8535443216996401,
+      "precision": 0.012046836298131051,
+      "recall": 0.16411042944785276,
+      "f1": 0.022445982798405706,
+      "fpr": 0.1393188854489164,
+      "roc_auc": 0.7799528974855191,
+      "tp": 321,
+      "fp": 26325,
+      "fn": 1635,
+      "tn": 162630
+    },
+    "multi_class_report": "              precision    recall  f1-score   support\n\n      BENIGN       0.99      0.86      0.92    188955\n        DDoS       0.00      0.00      0.00         0\n    PortScan       0.00      0.00      0.00         0\n  Web Attack       0.00      0.00      0.00         0\n      Botnet       0.00      0.00      0.00      1956\n       Probe       0.00      0.00      0.00         0\n\n    accuracy                           0.85    190911\n   macro avg       0.17      0.14      0.15    190911\nweighted avg       0.98      0.85      0.91    190911\n",
+    "anomaly_threshold": 0.2125703775882723,
+    "test_samples": 190911
+  }
+}
