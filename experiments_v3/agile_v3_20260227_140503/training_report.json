@@ -1,0 +1,48 @@
+{
+  "experiment": "experiments_v3\\agile_v3_20260227_140503",
+  "version": "v3.2",
+  "duration_min": 89.07,
+  "input_dim": 80,
+  "num_classes": 15,
+  "device": "privateuseone:0",
+  "amp": false,
+  "config": {
+    "ae_epochs": 20,
+    "ae_lr": 0.001,
+    "ae_bs": 512,
+    "tagn_epochs": 80,
+    "tagn_lr": 0.0003,
+    "tagn_bs": 64,
+    "tagn_seq_len": 25,
+    "tagn_patience": 12,
+    "corr_epochs": 15,
+    "corr_lr": 0.0001,
+    "corr_bs": 128,
+    "train_ratio": 0.8,
+    "conf_threshold": 0.35
+  },
+  "anomaly_threshold": 0.234027916193009,
+  "train_samples": 2262300,
+  "test_samples": 565576,
+  "train_test_split": "80% / 20%",
+  "validation": {
+    "binary": {
+      "accuracy": 0.8029902258936022,
+      "precision": 0.24888888888888888,
+      "recall": 0.0005030949322169417,
+      "f1": 0.0010041600918089227,
+      "fpr": 0.0003720295422275544,
+      "tp": 56,
+      "fp": 169,
+      "fn": 111255,
+      "tn": 454096,
+      "roc_auc": 0.5833441022988195,
+      "ddos_family_recall": 0.000566176857850108,
+      "ddos_family_samples": 75948
+    },
+    "multi_class_report": "                  precision    recall  f1-score   support\n\n          BENIGN       0.80      1.00      0.89    454265\n             Bot       0.00      0.00      0.00       391\n            DDoS       0.00      0.00      0.00     25605\n   DoS GoldenEye       0.00      0.00      0.00      2059\n        DoS Hulk       0.16      0.00      0.00     46025\nDoS Slowhttptest       0.00      0.00      0.00      1100\n   DoS Slowloris       0.00      0.00      0.00      1159\n     FTP-Patator       0.00      0.00      0.00      1587\n      Heartbleed       0.00      0.00      0.00         2\n    Infiltration       0.00      0.00      0.00         7\n        PortScan       0.00      0.00      0.00     31761\n     SSH-Patator       0.00      0.00      0.00      1180\n     Brute Force       0.00      0.00      0.00       301\n   SQL Injection       0.00      0.00      0.00         4\n             XSS       0.00      0.00      0.00       130\n\n        accuracy                           0.80    565576\n       macro avg       0.06      0.07      0.06    565576\n    weighted avg       0.66      0.80      0.72    565576\n",
+    "anomaly_threshold": 0.234027916193009,
+    "test_samples": 565576,
+    "train_test_split": "80% / 20%"
+  }
+}

@@ -1,0 +1,249 @@
+================================================================================
+HALO NIDS — AGILE v3  TEST REPORT (15-class)
+================================================================================
+Date      : 2026-02-25 09:04:36.084081
+Experiment: experiments_v3\agile_v3_20260225_021805
+Threshold : 0.323872
+Conf gate : 0.43
+Seq len   : 25
+Classes   : 15  (BENIGN, Bot, DDoS, DoS GoldenEye, DoS Hulk, DoS Slowhttptest, DoS Slowloris, FTP-Patator, Heartbleed, Infiltration, PortScan, SSH-Patator, Brute Force, SQL Injection, XSS)
+
+
+────────────────────────────────────────────────────────────────────────────────
+DDoS
+────────────────────────────────────────────────────────────────────────────────
+Samples  : 59986  (benign=29589  attack=30397)
+Accuracy : 0.9982
+Precision: 0.9975
+Recall   : 0.9990
+F1       : 0.9983
+FPR      : 0.0026
+ROC-AUC  : 0.9999
+TP=30368  FP=76  FN=29  TN=29513
+Gate     : 30444 raw -> 30444 kept (0 filtered)
+Priorities: {'CRITICAL': 12907, 'HIGH': 173, 'MEDIUM': 18122, 'LOW': 28784}
+
+                  precision    recall  f1-score   support
+
+          BENIGN       1.00      1.00      1.00     29589
+            DDoS       1.00      1.00      1.00     30397
+   DoS GoldenEye       0.00      0.00      0.00         0
+        DoS Hulk       0.00      0.00      0.00         0
+DoS Slowhttptest       0.00      0.00      0.00         0
+        PortScan       0.00      0.00      0.00         0
+
+        accuracy                           1.00     59986
+       macro avg       0.33      0.33      0.33     59986
+    weighted avg       1.00      1.00      1.00     59986
+
+
+────────────────────────────────────────────────────────────────────────────────
+PortScan
+────────────────────────────────────────────────────────────────────────────────
+Samples  : 59976  (benign=59604  attack=372)
+Accuracy : 0.9927
+Precision: 0.1753
+Recall   : 0.0457
+F1       : 0.0725
+FPR      : 0.0013
+ROC-AUC  : 0.6018
+TP=17  FP=80  FN=355  TN=59524
+Gate     : 97 raw -> 97 kept (0 filtered)
+Priorities: {'CRITICAL': 18, 'HIGH': 142, 'MEDIUM': 362, 'LOW': 59454}
+
+                  precision    recall  f1-score   support
+
+          BENIGN       0.99      1.00      1.00     59604
+   DoS GoldenEye       0.00      0.00      0.00         0
+        DoS Hulk       0.00      0.00      0.00         0
+DoS Slowhttptest       0.00      0.00      0.00         0
+   DoS Slowloris       0.00      0.00      0.00         0
+        PortScan       0.00      0.00      0.00       372
+
+        accuracy                           0.99     59976
+       macro avg       0.17      0.17      0.17     59976
+    weighted avg       0.99      0.99      0.99     59976
+
+
+────────────────────────────────────────────────────────────────────────────────
+WebAttacks
+────────────────────────────────────────────────────────────────────────────────
+Samples  : 59937  (benign=58546  attack=1391)
+Accuracy : 0.9759
+Precision: 0.3355
+Recall   : 0.0374
+F1       : 0.0673
+FPR      : 0.0018
+ROC-AUC  : 0.4599
+TP=52  FP=103  FN=1339  TN=58443
+Gate     : 155 raw -> 155 kept (0 filtered)
+Priorities: {'CRITICAL': 6, 'HIGH': 153, 'MEDIUM': 366, 'LOW': 59412}
+
+                  precision    recall  f1-score   support
+
+          BENIGN       0.98      1.00      0.99     58546
+   DoS GoldenEye       0.00      0.00      0.00         0
+DoS Slowhttptest       0.00      0.00      0.00         0
+   DoS Slowloris       0.00      0.00      0.00         0
+        PortScan       0.00      0.00      0.00         0
+     Brute Force       1.00      0.04      0.07      1391
+
+        accuracy                           0.98     59937
+       macro avg       0.33      0.17      0.18     59937
+    weighted avg       0.98      0.98      0.97     59937
+
+
+────────────────────────────────────────────────────────────────────────────────
+Infiltration
+────────────────────────────────────────────────────────────────────────────────
+Samples  : 59977  (benign=59977  attack=0)
+Accuracy : 0.9965
+Precision: 0.0000
+Recall   : 0.0000
+F1       : 0.0000
+FPR      : 0.0035
+ROC-AUC  : 0.0000
+TP=0  FP=209  FN=0  TN=59768
+Gate     : 209 raw -> 209 kept (0 filtered)
+Priorities: {'CRITICAL': 19, 'HIGH': 110, 'MEDIUM': 374, 'LOW': 59474}
+
+                  precision    recall  f1-score   support
+
+          BENIGN       1.00      1.00      1.00     59977
+   DoS GoldenEye       0.00      0.00      0.00         0
+        DoS Hulk       0.00      0.00      0.00         0
+DoS Slowhttptest       0.00      0.00      0.00         0
+   DoS Slowloris       0.00      0.00      0.00         0
+    Infiltration       0.00      0.00      0.00         0
+        PortScan       0.00      0.00      0.00         0
+
+        accuracy                           1.00     59977
+       macro avg       0.14      0.14      0.14     59977
+    weighted avg       1.00      1.00      1.00     59977
+
+
+────────────────────────────────────────────────────────────────────────────────
+Monday_Benign
+────────────────────────────────────────────────────────────────────────────────
+Samples  : 59926  (benign=59926  attack=0)
+Accuracy : 0.9982
+Precision: 0.0000
+Recall   : 0.0000
+F1       : 0.0000
+FPR      : 0.0018
+ROC-AUC  : 0.0000
+TP=0  FP=106  FN=0  TN=59820
+Gate     : 106 raw -> 106 kept (0 filtered)
+Priorities: {'CRITICAL': 21, 'HIGH': 305, 'MEDIUM': 430, 'LOW': 59170}
+
+                  precision    recall  f1-score   support
+
+          BENIGN       1.00      1.00      1.00     59926
+   DoS GoldenEye       0.00      0.00      0.00         0
+        DoS Hulk       0.00      0.00      0.00         0
+DoS Slowhttptest       0.00      0.00      0.00         0
+   DoS Slowloris       0.00      0.00      0.00         0
+    Infiltration       0.00      0.00      0.00         0
+        PortScan       0.00      0.00      0.00         0
+
+        accuracy                           1.00     59926
+       macro avg       0.14      0.14      0.14     59926
+    weighted avg       1.00      1.00      1.00     59926
+
+
+────────────────────────────────────────────────────────────────────────────────
+Tuesday
+────────────────────────────────────────────────────────────────────────────────
+Samples  : 59953  (benign=53277  attack=6676)
+Accuracy : 0.8880
+Precision: 0.2532
+Recall   : 0.0030
+F1       : 0.0059
+FPR      : 0.0011
+ROC-AUC  : 0.6164
+TP=20  FP=59  FN=6656  TN=53218
+Gate     : 79 raw -> 79 kept (0 filtered)
+Priorities: {'CRITICAL': 13, 'HIGH': 219, 'MEDIUM': 358, 'LOW': 59363}
+
+                  precision    recall  f1-score   support
+
+          BENIGN       0.89      1.00      0.94     53277
+   DoS GoldenEye       0.00      0.00      0.00         0
+        DoS Hulk       0.00      0.00      0.00         0
+DoS Slowhttptest       0.00      0.00      0.00         0
+   DoS Slowloris       0.00      0.00      0.00         0
+     FTP-Patator       0.74      0.00      0.01      6676
+        PortScan       0.00      0.00      0.00         0
+
+        accuracy                           0.89     59953
+       macro avg       0.23      0.14      0.14     59953
+    weighted avg       0.87      0.89      0.84     59953
+
+
+────────────────────────────────────────────────────────────────────────────────
+Wednesday
+────────────────────────────────────────────────────────────────────────────────
+Samples  : 59943  (benign=55781  attack=4162)
+Accuracy : 0.9637
+Precision: 0.9498
+Recall   : 0.5041
+F1       : 0.6586
+FPR      : 0.0020
+ROC-AUC  : 0.8664
+TP=2098  FP=111  FN=2064  TN=55670
+Gate     : 2209 raw -> 2209 kept (0 filtered)
+Priorities: {'CRITICAL': 46, 'HIGH': 256, 'MEDIUM': 2546, 'LOW': 57095}
+
+                  precision    recall  f1-score   support
+
+          BENIGN       0.96      1.00      0.98     55781
+        DoS Hulk       0.00      0.00      0.00         0
+DoS Slowhttptest       0.00      0.00      0.00         0
+   DoS Slowloris       0.99      0.50      0.67      4162
+     FTP-Patator       0.00      0.00      0.00         0
+    Infiltration       0.00      0.00      0.00         0
+        PortScan       0.00      0.00      0.00         0
+     Brute Force       0.00      0.00      0.00         0
+
+        accuracy                           0.96     59943
+       macro avg       0.24      0.19      0.21     59943
+    weighted avg       0.97      0.96      0.96     59943
+
+
+────────────────────────────────────────────────────────────────────────────────
+Friday_Morning
+────────────────────────────────────────────────────────────────────────────────
+Samples  : 59949  (benign=59919  attack=30)
+Accuracy : 0.9976
+Precision: 0.0000
+Recall   : 0.0000
+F1       : 0.0000
+FPR      : 0.0019
+ROC-AUC  : 0.4392
+TP=0  FP=115  FN=30  TN=59804
+Gate     : 115 raw -> 115 kept (0 filtered)
+Priorities: {'CRITICAL': 21, 'HIGH': 195, 'MEDIUM': 385, 'LOW': 59348}
+
+                  precision    recall  f1-score   support
+
+          BENIGN       1.00      1.00      1.00     59919
+             Bot       0.00      0.00      0.00        30
+DoS Slowhttptest       0.00      0.00      0.00         0
+   DoS Slowloris       0.00      0.00      0.00         0
+    Infiltration       0.00      0.00      0.00         0
+        PortScan       0.00      0.00      0.00         0
+
+        accuracy                           1.00     59949
+       macro avg       0.17      0.17      0.17     59949
+    weighted avg       1.00      1.00      1.00     59949
+
+
+================================================================================
+AGGREGATE (micro-average)
+================================================================================
+Accuracy : 0.9764
+Precision: 0.9743
+Recall   : 0.7566
+F1       : 0.8518
+FPR      : 0.0020
+TP=32555  FP=859  FN=10473  TN=435760  N=479647

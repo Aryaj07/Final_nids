@@ -1,0 +1,35 @@
+{
+  "version": "v3.2",
+  "input_dim": 80,
+  "num_classes": 15,
+  "threat_labels": [
+    "BENIGN",
+    "Bot",
+    "DDoS",
+    "DoS GoldenEye",
+    "DoS Hulk",
+    "DoS Slowhttptest",
+    "DoS Slowloris",
+    "FTP-Patator",
+    "Heartbleed",
+    "Infiltration",
+    "PortScan",
+    "SSH-Patator",
+    "Brute Force",
+    "SQL Injection",
+    "XSS"
+  ],
+  "anomaly_threshold": 0.24335503652691845,
+  "seq_len": 25,
+  "confidence_threshold": 0.3,
+  "train_test_split": "80% / 20%",
+  "train_samples": 2262300,
+  "test_samples": 565576,
+  "model_files": {
+    "autoencoder": "autoencoder.pt",
+    "tagn": "tagn_best.pt",
+    "correlation": "correlation_engine.pt",
+    "scaler": "scaler.pkl",
+    "test_split": "test_split.npz"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "experiment": "experiments_v3\\agile_v3_20260225_021805",
+  "version": "v3",
+  "duration_min": 102.79,
+  "input_dim": 80,
+  "num_classes": 15,
+  "device": "privateuseone:0",
+  "amp": false,
+  "config": {
+    "ae_epochs": 20,
+    "ae_lr": 0.001,
+    "ae_bs": 512,
+    "tagn_epochs": 80,
+    "tagn_lr": 0.0003,
+    "tagn_bs": 64,
+    "tagn_seq_len": 25,
+    "tagn_patience": 12,
+    "corr_epochs": 15,
+    "corr_lr": 0.0001,
+    "corr_bs": 128
+  },
+  "anomaly_threshold": 0.3238723227381708,
+  "validation": {
+    "binary": {
+      "accuracy": 0.9897543881704041,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "fpr": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1956,
+      "tn": 188955,
+      "roc_auc": 0.48485294672306767
+    },
+    "multi_class_report": "              precision    recall  f1-score   support\n\n      BENIGN       0.99      1.00      0.99    188955\n         Bot       0.00      0.00      0.00      1956\n\n    accuracy                           0.99    190911\n   macro avg       0.49      0.50      0.50    190911\nweighted avg       0.98      0.99      0.98    190911\n",
+    "anomaly_threshold": 0.3238723227381708,
+    "test_samples": 190911
+  }
+}

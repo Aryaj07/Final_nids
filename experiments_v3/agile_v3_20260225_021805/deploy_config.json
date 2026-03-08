@@ -1,0 +1,30 @@
+{
+  "version": "v3",
+  "input_dim": 80,
+  "num_classes": 15,
+  "threat_labels": [
+    "BENIGN",
+    "Bot",
+    "DDoS",
+    "DoS GoldenEye",
+    "DoS Hulk",
+    "DoS Slowhttptest",
+    "DoS Slowloris",
+    "FTP-Patator",
+    "Heartbleed",
+    "Infiltration",
+    "PortScan",
+    "SSH-Patator",
+    "Brute Force",
+    "SQL Injection",
+    "XSS"
+  ],
+  "anomaly_threshold": 0.3238723227381708,
+  "seq_len": 25,
+  "model_files": {
+    "autoencoder": "autoencoder.pt",
+    "tagn": "tagn_best.pt",
+    "correlation": "correlation_engine.pt",
+    "scaler": "scaler.pkl"
+  }
+}

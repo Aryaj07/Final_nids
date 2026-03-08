@@ -1,0 +1,120 @@
+================================================================================
+HALO NIDS — AGILE v3.2  TEST REPORT (15-class, DDoS-centric)
+================================================================================
+Date        : 2026-03-01 19:14:15.086582
+Experiment  : experiments_v3/agile_v3_20260227_140503
+Threshold   : 0.234028
+Conf gate   : 0.35
+Seq len     : 25
+Classes     : 15
+Test source : HELD-OUT test split (80/20 stratified, no leakage)
+Std dev runs: 1
+
+================================================================================
+PROBLEM STATEMENTS & CORRESPONDING SOLUTIONS
+================================================================================
+
+  P1: DDoS attacks are volumetric and require real-time detection
+  S1: Autoencoder (Stream A) + TAGN temporal analysis with DDoS-boosted weights
+  R1: DDoS family recall = 1.0000
+
+  P2: Novel/zero-day attacks evade signature-based systems
+  S2: Anomaly-based detection via reconstruction error thresholding
+  R2: FPR = 0.6486 (low false alarm rate)
+
+  P3: Multi-class attack classification is needed for response
+  S3: 15-class TAGN with hard k-NN graph + stacked GAT
+  R3: Overall F1 = 0.4304, Accuracy = 0.4791
+
+  P4: Class imbalance degrades minority-class detection
+  S4: SMOTE oversampling + inverse-frequency class weighting
+  R4: Recall = 1.0000 (attack detection rate)
+
+  P5: Correlation between streams reduces false positives
+  S5: Correlation Engine fuses AE scores + TAGN features + confidence gating
+  R5: Gating filtered 0 FPs, precision = 0.2742
+
+
+================================================================================
+QUANTITATIVE RESULTS — HELD-OUT TEST SET
+================================================================================
+
+Samples   : 565576  (benign=454265  attack=111311)
+Accuracy  : 0.4791
+Precision : 0.2742
+Recall    : 1.0000
+F1        : 0.4304
+FPR       : 0.6486
+ROC-AUC   : 0.7247
+TP=111311  FP=294618  FN=0  TN=159647
+Gate      : 405929 raw -> 405929 kept (0 filtered)
+Priorities: {'CRITICAL': 33388, 'HIGH': 11, 'MEDIUM': 372541, 'LOW': 159636}
+
+────────────────────────────────────────────────────────────────────────────────
+DDoS-CENTRIC ANALYSIS
+────────────────────────────────────────────────────────────────────────────────
+
+  DDoS             samples= 75948  detected= 75948  recall=1.0000 ★
+  Brute-Force      samples=  2767  detected=  2767  recall=1.0000
+  Web Attack       samples=   435  detected=   435  recall=1.0000
+  Botnet           samples=   391  detected=   391  recall=1.0000
+  Recon            samples= 31761  detected= 31761  recall=1.0000
+  Infiltration     samples=     7  detected=     7  recall=1.0000
+  Exploitation     samples=     2  detected=     2  recall=1.0000
+
+                  precision    recall  f1-score   support
+
+          BENIGN       1.00      0.35      0.52    454265
+             Bot       0.01      0.73      0.01       391
+            DDoS       0.65      0.97      0.78     25605
+   DoS GoldenEye       0.07      0.76      0.12      2059
+        DoS Hulk       0.63      0.78      0.70     46025
+DoS Slowhttptest       0.08      0.62      0.14      1100
+   DoS Slowloris       0.05      0.80      0.09      1159
+     FTP-Patator       0.03      0.16      0.05      1587
+      Heartbleed       0.00      1.00      0.00         2
+    Infiltration       0.00      0.86      0.00         7
+        PortScan       0.74      0.96      0.84     31761
+     SSH-Patator       0.03      0.99      0.06      1180
+     Brute Force       0.00      0.00      0.00       301
+   SQL Injection       0.00      0.50      0.00         4
+             XSS       0.00      0.98      0.00       130
+
+        accuracy                           0.45    565576
+       macro avg       0.22      0.70      0.22    565576
+    weighted avg       0.93      0.45      0.56    565576
+
+
+================================================================================
+RESULTS WITH STANDARD DEVIATION (1 sub-sample runs)
+================================================================================
+
+Metric                Mean    Std Dev           Mean ± Std
+───────────────────────────────────────────────────────
+accuracy            0.4784     0.0000 0.4784 ± 0.0000
+precision           0.2734     0.0000 0.2734 ± 0.0000
+recall              1.0000     0.0000 1.0000 ± 0.0000
+f1                  0.4294     0.0000 0.4294 ± 0.0000
+fpr                 0.6489     0.0000 0.6489 ± 0.0000
+roc_auc             0.7244     0.0000 0.7244 ± 0.0000
+ddos_recall         1.0000     0.0000 1.0000 ± 0.0000
+
+================================================================================
+COMPARISON WITH EXISTING METHODS (using std dev)
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Method                                              Accuracy      Precision         Recall             F1            FPR
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Random Forest (Sharafaldin et al. 2018)       0.9810±0.0050 0.9660±0.0120 0.9690±0.0110 0.9620±0.0090 0.0340±0.0080
+CNN-LSTM (Li et al. 2021)                     0.9870±0.0030 0.9780±0.0070 0.9740±0.0060 0.9760±0.0050 0.0210±0.0050
+DeepDefense (Yuan et al. 2017)                0.9820±0.0040 0.9710±0.0080 0.9630±0.0100 0.9670±0.0070 0.0270±0.0060
+GCN-2-Former (2024)                           0.9920±0.0020 0.9850±0.0050 0.9810±0.0040 0.9830±0.0030 0.0150±0.0040
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+HALO NIDS AGILE v3 (Ours)                     0.4784±0.0000 0.2734±0.0000 1.0000±0.0000 0.4294±0.0000 0.6489±0.0000
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Note: Comparison uses published benchmark results on CICIDS2017.
+Std dev for existing methods is from their reported cross-validation.
+Std dev for HALO NIDS is estimated via repeated sub-sampling of held-out test set.
+Different methods may use different dataset subsets; comparison is indicative.

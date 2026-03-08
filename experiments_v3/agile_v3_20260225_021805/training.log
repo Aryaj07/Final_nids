@@ -1,0 +1,106 @@
+2026-02-25 02:18:05,279  INFO      Device   : DirectML (AMD/Intel GPU)
+2026-02-25 02:18:05,280  INFO      DirectML : AE + Corr on DirectML GPU  |  TAGN (LSTM) on CPU
+2026-02-25 02:18:05,280  INFO      AMP      : disabled
+2026-02-25 02:18:05,280  INFO      Batch sz : AE=512  TAGN=64  Corr=128
+2026-02-25 02:18:05,280  INFO      ============================================================
+2026-02-25 02:18:05,280  INFO        HALO NIDS — AGILE v3  (15-class, GPU-accelerated)
+2026-02-25 02:18:05,280  INFO        Device: privateuseone:0
+2026-02-25 02:18:05,280  INFO      ============================================================
+
+2026-02-25 02:18:05,281  INFO      ─── Phase 1: Loading & preprocessing (15-class) ───
+2026-02-25 02:18:06,664  INFO        Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv                    225745 rows
+2026-02-25 02:18:08,246  INFO        Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv                286467 rows
+2026-02-25 02:18:10,069  INFO        Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv              458968 rows
+2026-02-25 02:18:11,819  INFO        Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv         288602 rows
+2026-02-25 02:18:16,151  INFO        Monday-WorkingHours.pcap_ISCX.csv                                   529918 rows
+2026-02-25 02:18:19,110  INFO        Tuesday-WorkingHours.pcap_ISCX.csv                                  445909 rows
+2026-02-25 02:18:23,954  INFO        Wednesday-workingHours.pcap_ISCX.csv                                692703 rows
+2026-02-25 02:18:31,667  INFO      Combined: 2928312 rows  |  input_dim=80
+2026-02-25 02:18:31,667  INFO      Class distribution (raw):
+2026-02-25 02:18:31,669  INFO         0  BENIGN                   2082365
+2026-02-25 02:18:31,673  INFO         2  DDoS                      128025
+2026-02-25 02:18:31,675  INFO         3  DoS GoldenEye              10293
+2026-02-25 02:18:31,677  INFO         4  DoS Hulk                  230124
+2026-02-25 02:18:31,680  INFO         5  DoS Slowhttptest            5499
+2026-02-25 02:18:31,682  INFO         6  DoS Slowloris               5796
+2026-02-25 02:18:31,684  INFO         7  FTP-Patator                 7935
+2026-02-25 02:18:31,686  INFO         8  Heartbleed                    11
+2026-02-25 02:18:31,688  INFO         9  Infiltration                  36
+2026-02-25 02:18:31,690  INFO        10  PortScan                  158804
+2026-02-25 02:18:31,692  INFO        11  SSH-Patator                 5897
+2026-02-25 02:18:31,694  INFO        12  Brute Force                 1507
+2026-02-25 02:18:31,696  INFO        13  SQL Injection                 21
+2026-02-25 02:18:31,698  INFO        14  XSS                          652
+2026-02-25 02:18:34,856  INFO      ─── Phase 2A: Autoencoder (Stream A)  [privateuseone:0] ───
+2026-02-25 02:19:38,385  INFO        Epoch  1/20  loss=0.213686
+2026-02-25 02:23:46,928  INFO        Epoch  5/20  loss=0.107423
+2026-02-25 02:29:03,635  INFO        Epoch 10/20  loss=0.097642
+2026-02-25 02:34:57,686  INFO        Epoch 15/20  loss=0.096159
+2026-02-25 02:40:07,314  INFO        Epoch 20/20  loss=0.093379
+2026-02-25 02:40:07,321  INFO        Saved autoencoder.pt
+
+2026-02-25 02:40:07,340  INFO      ─── Phase 2B: TAGN v3 (15-class, hard k-NN)  [cpu] ───
+2026-02-25 02:40:08,244  INFO        Sequences before SMOTE: 105478
+2026-02-25 02:40:08,245  INFO        [Step 3b] SMOTE → target 3000 seqs / minority class
+2026-02-25 02:40:08,245  WARNING     Class 1 has 0 sequences — skipping
+2026-02-25 02:40:08,246  INFO        Class  3  DoS GoldenEye             411 seqs → + 2589 synthetic
+2026-02-25 02:40:11,664  INFO        Class  5  DoS Slowhttptest          220 seqs → + 2780 synthetic
+2026-02-25 02:40:13,690  INFO        Class  6  DoS Slowloris             232 seqs → + 2768 synthetic
+2026-02-25 02:40:15,794  INFO        Class  7  FTP-Patator               318 seqs → + 2682 synthetic
+2026-02-25 02:40:18,529  WARNING     Class 8 has 0 sequences — skipping
+2026-02-25 02:40:18,529  INFO        Class  9  Infiltration                1 seqs → + 2999 synthetic
+2026-02-25 02:40:18,585  INFO        Class 11  SSH-Patator               235 seqs → + 2765 synthetic
+2026-02-25 02:40:20,728  INFO        Class 12  Brute Force                61 seqs → + 2939 synthetic
+2026-02-25 02:40:20,938  INFO        Class 13  SQL Injection               1 seqs → + 2999 synthetic
+2026-02-25 02:40:20,991  INFO        Class 14  XSS                        25 seqs → + 2975 synthetic
+2026-02-25 02:40:21,424  INFO        Sequences after  SMOTE: 130974
+2026-02-25 02:40:21,425  INFO           0 BENIGN                  83294
+2026-02-25 02:40:21,425  INFO           2 DDoS                     5122
+2026-02-25 02:40:21,426  INFO           3 DoS GoldenEye            3000
+2026-02-25 02:40:21,426  INFO           4 DoS Hulk                 9205
+2026-02-25 02:40:21,426  INFO           5 DoS Slowhttptest         3000
+2026-02-25 02:40:21,426  INFO           6 DoS Slowloris            3000
+2026-02-25 02:40:21,426  INFO           7 FTP-Patator              3000
+2026-02-25 02:40:21,427  INFO           9 Infiltration             3000
+2026-02-25 02:40:21,427  INFO          10 PortScan                 6353
+2026-02-25 02:40:21,427  INFO          11 SSH-Patator              3000
+2026-02-25 02:40:21,427  INFO          12 Brute Force              3000
+2026-02-25 02:40:21,427  INFO          13 SQL Injection            3000
+2026-02-25 02:40:21,428  INFO          14 XSS                      3000
+2026-02-25 02:40:21,627  INFO      
+  Train: 104779  Val: 26195
+2026-02-25 02:40:21,627  INFO        Class weights: ['0.00', '7.48', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '7.48', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00']
+2026-02-25 02:44:03,186  INFO        Ep   1/80  loss=0.1449  tr=94.66%  va=99.60%  best=99.60%
+2026-02-25 02:47:44,071  INFO        Ep   2/80  loss=0.0120  tr=99.44%  va=99.60%  best=99.60%
+2026-02-25 02:51:25,183  INFO        Ep   3/80  loss=0.0105  tr=99.54%  va=99.74%  best=99.74%
+2026-02-25 02:58:47,777  INFO        Ep   5/80  loss=0.0077  tr=99.64%  va=99.76%  best=99.76%
+2026-02-25 03:17:11,758  INFO        Ep  10/80  loss=0.0031  tr=99.68%  va=97.40%  best=99.76%
+2026-02-25 03:43:03,907  INFO        Early stop at epoch 17
+2026-02-25 03:43:03,928  INFO        Best val acc: 99.76%  |  Saved tagn_best.pt
+
+2026-02-25 03:43:03,988  INFO      ─── Phase 3: Correlation Engine  [privateuseone:0] ───
+2026-02-25 03:44:15,674  INFO        Ep  1/15  loss=0.4286
+2026-02-25 03:48:59,507  INFO        Ep  5/15  loss=0.0199
+2026-02-25 03:54:52,582  INFO        Ep 10/15  loss=0.0127
+2026-02-25 04:00:46,262  INFO        Ep 15/15  loss=0.0118
+2026-02-25 04:00:46,264  INFO        Saved correlation_engine.pt
+
+2026-02-25 04:00:46,286  INFO      ─── Calibrating anomaly threshold ───
+2026-02-25 04:00:46,708  INFO        Benign score  mean=0.129382  p95=0.121445  p99=0.323872
+2026-02-25 04:00:46,708  INFO        Selected threshold = 0.323872
+
+2026-02-25 04:00:46,709  INFO      ─── Phase 5: Validation (15-class)  [privateuseone:0] ───
+2026-02-25 04:00:47,051  INFO        Test samples: 190911
+2026-02-25 04:00:52,500  INFO        Acc=0.9898  Pre=0.0000  Rec=0.0000  F1=0.0000  FPR=0.0000  AUC=0.4849
+2026-02-25 04:00:52,501  INFO        TP=0  FP=0  FN=1956  TN=188955
+2026-02-25 04:00:52,592  INFO      
+              precision    recall  f1-score   support
+
+      BENIGN       0.99      1.00      0.99    188955
+         Bot       0.00      0.00      0.00      1956
+
+    accuracy                           0.99    190911
+   macro avg       0.49      0.50      0.50    190911
+weighted avg       0.98      0.99      0.98    190911
+
+2026-02-25 04:00:52,597  INFO      ─── Complete in 102.8 min  |  experiments_v3\agile_v3_20260225_021805 ───

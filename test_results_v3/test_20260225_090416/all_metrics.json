@@ -1,0 +1,254 @@
+{
+  "DDoS": {
+    "binary": {
+      "accuracy": 0.9982495915713666,
+      "precision": 0.9975036131914334,
+      "recall": 0.999045958482745,
+      "f1": 0.9982741901020693,
+      "fpr": 0.0025685220859103046,
+      "tp": 30368,
+      "fp": 76,
+      "fn": 29,
+      "tn": 29513,
+      "roc_auc": 0.999892026148014
+    },
+    "multi_class_report": "                  precision    recall  f1-score   support\n\n          BENIGN       1.00      1.00      1.00     29589\n            DDoS       1.00      1.00      1.00     30397\n   DoS GoldenEye       0.00      0.00      0.00         0\n        DoS Hulk       0.00      0.00      0.00         0\nDoS Slowhttptest       0.00      0.00      0.00         0\n        PortScan       0.00      0.00      0.00         0\n\n        accuracy                           1.00     59986\n       macro avg       0.33      0.33      0.33     59986\n    weighted avg       1.00      1.00      1.00     59986\n",
+    "priority_distribution": {
+      "CRITICAL": 12907,
+      "HIGH": 173,
+      "MEDIUM": 18122,
+      "LOW": 28784
+    },
+    "n_samples": 59986,
+    "n_benign": 29589,
+    "n_attack": 30397,
+    "confidence_gating": {
+      "raw_attack_predictions": 30444,
+      "after_gating": 30444,
+      "filtered_out": 0
+    },
+    "inference_time_s": 2.1680796146392822
+  },
+  "PortScan": {
+    "binary": {
+      "accuracy": 0.9927470988395358,
+      "precision": 0.17525773195876287,
+      "recall": 0.0456989247311828,
+      "f1": 0.07249466950959488,
+      "fpr": 0.0013421917992081068,
+      "tp": 17,
+      "fp": 80,
+      "fn": 355,
+      "tn": 59524,
+      "roc_auc": 0.6018365251881053
+    },
+    "multi_class_report": "                  precision    recall  f1-score   support\n\n          BENIGN       0.99      1.00      1.00     59604\n   DoS GoldenEye       0.00      0.00      0.00         0\n        DoS Hulk       0.00      0.00      0.00         0\nDoS Slowhttptest       0.00      0.00      0.00         0\n   DoS Slowloris       0.00      0.00      0.00         0\n        PortScan       0.00      0.00      0.00       372\n\n        accuracy                           0.99     59976\n       macro avg       0.17      0.17      0.17     59976\n    weighted avg       0.99      0.99      0.99     59976\n",
+    "priority_distribution": {
+      "CRITICAL": 18,
+      "HIGH": 142,
+      "MEDIUM": 362,
+      "LOW": 59454
+    },
+    "n_samples": 59976,
+    "n_benign": 59604,
+    "n_attack": 372,
+    "confidence_gating": {
+      "raw_attack_predictions": 97,
+      "after_gating": 97,
+      "filtered_out": 0
+    },
+    "inference_time_s": 2.226768970489502
+  },
+  "WebAttacks": {
+    "binary": {
+      "accuracy": 0.9759414051420658,
+      "precision": 0.33548387096774196,
+      "recall": 0.037383177570093455,
+      "f1": 0.06727037516170763,
+      "fpr": 0.0017593003791890138,
+      "tp": 52,
+      "fp": 103,
+      "fn": 1339,
+      "tn": 58443,
+      "roc_auc": 0.4599475111498408
+    },
+    "multi_class_report": "                  precision    recall  f1-score   support\n\n          BENIGN       0.98      1.00      0.99     58546\n   DoS GoldenEye       0.00      0.00      0.00         0\nDoS Slowhttptest       0.00      0.00      0.00         0\n   DoS Slowloris       0.00      0.00      0.00         0\n        PortScan       0.00      0.00      0.00         0\n     Brute Force       1.00      0.04      0.07      1391\n\n        accuracy                           0.98     59937\n       macro avg       0.33      0.17      0.18     59937\n    weighted avg       0.98      0.98      0.97     59937\n",
+    "priority_distribution": {
+      "CRITICAL": 6,
+      "HIGH": 153,
+      "MEDIUM": 366,
+      "LOW": 59412
+    },
+    "n_samples": 59937,
+    "n_benign": 58546,
+    "n_attack": 1391,
+    "confidence_gating": {
+      "raw_attack_predictions": 155,
+      "after_gating": 155,
+      "filtered_out": 0
+    },
+    "inference_time_s": 1.9568603038787842
+  },
+  "Infiltration": {
+    "binary": {
+      "accuracy": 0.9965153308768361,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "fpr": 0.0034846691231638794,
+      "tp": 0,
+      "fp": 209,
+      "fn": 0,
+      "tn": 59768,
+      "roc_auc": 0.0
+    },
+    "multi_class_report": "                  precision    recall  f1-score   support\n\n          BENIGN       1.00      1.00      1.00     59977\n   DoS GoldenEye       0.00      0.00      0.00         0\n        DoS Hulk       0.00      0.00      0.00         0\nDoS Slowhttptest       0.00      0.00      0.00         0\n   DoS Slowloris       0.00      0.00      0.00         0\n    Infiltration       0.00      0.00      0.00         0\n        PortScan       0.00      0.00      0.00         0\n\n        accuracy                           1.00     59977\n       macro avg       0.14      0.14      0.14     59977\n    weighted avg       1.00      1.00      1.00     59977\n",
+    "priority_distribution": {
+      "CRITICAL": 19,
+      "HIGH": 110,
+      "MEDIUM": 374,
+      "LOW": 59474
+    },
+    "n_samples": 59977,
+    "n_benign": 59977,
+    "n_attack": 0,
+    "confidence_gating": {
+      "raw_attack_predictions": 209,
+      "after_gating": 209,
+      "filtered_out": 0
+    },
+    "inference_time_s": 1.8388948440551758
+  },
+  "Monday_Benign": {
+    "binary": {
+      "accuracy": 0.9982311517538297,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "fpr": 0.0017688482461702766,
+      "tp": 0,
+      "fp": 106,
+      "fn": 0,
+      "tn": 59820,
+      "roc_auc": 0.0
+    },
+    "multi_class_report": "                  precision    recall  f1-score   support\n\n          BENIGN       1.00      1.00      1.00     59926\n   DoS GoldenEye       0.00      0.00      0.00         0\n        DoS Hulk       0.00      0.00      0.00         0\nDoS Slowhttptest       0.00      0.00      0.00         0\n   DoS Slowloris       0.00      0.00      0.00         0\n    Infiltration       0.00      0.00      0.00         0\n        PortScan       0.00      0.00      0.00         0\n\n        accuracy                           1.00     59926\n       macro avg       0.14      0.14      0.14     59926\n    weighted avg       1.00      1.00      1.00     59926\n",
+    "priority_distribution": {
+      "CRITICAL": 21,
+      "HIGH": 305,
+      "MEDIUM": 430,
+      "LOW": 59170
+    },
+    "n_samples": 59926,
+    "n_benign": 59926,
+    "n_attack": 0,
+    "confidence_gating": {
+      "raw_attack_predictions": 106,
+      "after_gating": 106,
+      "filtered_out": 0
+    },
+    "inference_time_s": 2.0719478130340576
+  },
+  "Tuesday": {
+    "binary": {
+      "accuracy": 0.8879955965506313,
+      "precision": 0.25316455696202533,
+      "recall": 0.0029958058717795086,
+      "f1": 0.005921539600296077,
+      "fpr": 0.0011074197120708748,
+      "tp": 20,
+      "fp": 59,
+      "fn": 6656,
+      "tn": 53218,
+      "roc_auc": 0.6164093058163865
+    },
+    "multi_class_report": "                  precision    recall  f1-score   support\n\n          BENIGN       0.89      1.00      0.94     53277\n   DoS GoldenEye       0.00      0.00      0.00         0\n        DoS Hulk       0.00      0.00      0.00         0\nDoS Slowhttptest       0.00      0.00      0.00         0\n   DoS Slowloris       0.00      0.00      0.00         0\n     FTP-Patator       0.74      0.00      0.01      6676\n        PortScan       0.00      0.00      0.00         0\n\n        accuracy                           0.89     59953\n       macro avg       0.23      0.14      0.14     59953\n    weighted avg       0.87      0.89      0.84     59953\n",
+    "priority_distribution": {
+      "CRITICAL": 13,
+      "HIGH": 219,
+      "MEDIUM": 358,
+      "LOW": 59363
+    },
+    "n_samples": 59953,
+    "n_benign": 53277,
+    "n_attack": 6676,
+    "confidence_gating": {
+      "raw_attack_predictions": 79,
+      "after_gating": 79,
+      "filtered_out": 0
+    },
+    "inference_time_s": 1.9649975299835205
+  },
+  "Wednesday": {
+    "binary": {
+      "accuracy": 0.9637155297532656,
+      "precision": 0.9497510185604345,
+      "recall": 0.5040845747236905,
+      "f1": 0.6586093234970962,
+      "fpr": 0.001989924884817411,
+      "tp": 2098,
+      "fp": 111,
+      "fn": 2064,
+      "tn": 55670,
+      "roc_auc": 0.8663728387895338
+    },
+    "multi_class_report": "                  precision    recall  f1-score   support\n\n          BENIGN       0.96      1.00      0.98     55781\n        DoS Hulk       0.00      0.00      0.00         0\nDoS Slowhttptest       0.00      0.00      0.00         0\n   DoS Slowloris       0.99      0.50      0.67      4162\n     FTP-Patator       0.00      0.00      0.00         0\n    Infiltration       0.00      0.00      0.00         0\n        PortScan       0.00      0.00      0.00         0\n     Brute Force       0.00      0.00      0.00         0\n\n        accuracy                           0.96     59943\n       macro avg       0.24      0.19      0.21     59943\n    weighted avg       0.97      0.96      0.96     59943\n",
+    "priority_distribution": {
+      "CRITICAL": 46,
+      "HIGH": 256,
+      "MEDIUM": 2546,
+      "LOW": 57095
+    },
+    "n_samples": 59943,
+    "n_benign": 55781,
+    "n_attack": 4162,
+    "confidence_gating": {
+      "raw_attack_predictions": 2209,
+      "after_gating": 2209,
+      "filtered_out": 0
+    },
+    "inference_time_s": 2.0322511196136475
+  },
+  "Friday_Morning": {
+    "binary": {
+      "accuracy": 0.9975812774191396,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "fpr": 0.0019192576645137602,
+      "tp": 0,
+      "fp": 115,
+      "fn": 30,
+      "tn": 59804,
+      "roc_auc": 0.43919736088163464
+    },
+    "multi_class_report": "                  precision    recall  f1-score   support\n\n          BENIGN       1.00      1.00      1.00     59919\n             Bot       0.00      0.00      0.00        30\nDoS Slowhttptest       0.00      0.00      0.00         0\n   DoS Slowloris       0.00      0.00      0.00         0\n    Infiltration       0.00      0.00      0.00         0\n        PortScan       0.00      0.00      0.00         0\n\n        accuracy                           1.00     59949\n       macro avg       0.17      0.17      0.17     59949\n    weighted avg       1.00      1.00      1.00     59949\n",
+    "priority_distribution": {
+      "CRITICAL": 21,
+      "HIGH": 195,
+      "MEDIUM": 385,
+      "LOW": 59348
+    },
+    "n_samples": 59949,
+    "n_benign": 59919,
+    "n_attack": 30,
+    "confidence_gating": {
+      "raw_attack_predictions": 115,
+      "after_gating": 115,
+      "filtered_out": 0
+    },
+    "inference_time_s": 1.9714930057525635
+  },
+  "__aggregate__": {
+    "accuracy": 0.9763742919271882,
+    "precision": 0.9742922128449153,
+    "recall": 0.7566003532583434,
+    "f1": 0.8517568875748934,
+    "fpr": 0.001967390333448613,
+    "tp": 32555,
+    "fp": 859,
+    "fn": 10473,
+    "tn": 435760,
+    "n": 479647
+  }
+}
